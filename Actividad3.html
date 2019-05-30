@@ -1,0 +1,4205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0088)https://www.cerebriti.com/juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" class=" isnt-mobile "><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="format-detection" content="telephone=no">
+<title>Juegos de Tecnología | Juego de Manejo de amenazas: Ciberseguridad | Cerebriti</title>
+
+<link href="https://www.cerebriti.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="https://www.cerebriti.com/favicon.ico" rel="icon" type="image/x-icon">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" type="text/css" href="./Actividad3_files/cssreset-min.css"> <!-- http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css -->
+
+	<link rel="stylesheet" type="text/css" href="./Actividad3_files/jquery-ui.css">
+	
+	<link rel="stylesheet" href="./Actividad3_files/validationEngine.jquery.css" type="text/css">
+	
+	<link rel="stylesheet" href="./Actividad3_files/font-awesome.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="./Actividad3_files/estilo_v304.css">
+	
+<script src="./Actividad3_files/all.js.descarga" async="" crossorigin="anonymous"></script><script src="./Actividad3_files/osd.js.descarga"></script><script src="./Actividad3_files/ca-pub-4454931198923716.js.descarga"></script><script id="facebook-jssdk" src="./Actividad3_files/all.js(1).descarga"></script><script async="" src="./Actividad3_files/analytics.js.descarga"></script><script type="text/javascript">
+/*String.prototype.format = function () {
+  var args = [].slice.call(arguments);
+  return this.replace(/(\{\d+\})/g, function (a){
+      return args[+(a.substr(1,a.length-2))||0];
+  });
+};*/
+String.format = function() {
+  var s = arguments[0];
+  for (var i = 0; i < arguments.length - 1; i++) {
+  var reg = new RegExp("\\{" + i + "\\}", "gm");
+  s = s.replace(reg, arguments[i + 1]);
+  }
+  return s;
+}
+</script>
+	
+	<script src="./Actividad3_files/jquery.min.js.descarga" type="text/javascript"></script>
+	<script src="./Actividad3_files/jquery-ui.min.js.descarga"></script>
+	<script src="./Actividad3_files/jquery.validationEngine-es.js.descarga" type="text/javascript" charset="utf-8"></script>
+	<script src="./Actividad3_files/jquery.validationEngine.js.descarga" type="text/javascript" charset="utf-8"></script>
+	
+	
+	
+	<style>
+	.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {opacity:1.0;}
+	</style>
+	
+<script type="text/javascript">
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
+var isEmbeded = false;
+</script>	
+	
+	
+	
+	
+	<style type="text/css">
+.buttonUploadFile {
+  width: 145px;
+  height: 27px;
+}
+.buttonUploadFile::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.buttonUploadFile:before {
+  content: 'Selecciona un fichero...';
+  display: inline-block;
+  background: -webkit-gradient(linear, 0% 40%, 0% 70%, from(#F9F9F9), to(#E3E3E3));
+  background: -webkit-linear-gradient(top, #F9F9F9, #E3E3E3);
+  background: -moz-linear-gradient(top, #F9F9F9, #E3E3E3);
+  background: -ms-linear-gradient(top, #F9F9F9, #E3E3E3);
+  background: -o-linear-gradient(top, #F9F9F9, #E3E3E3);
+  background: linear-gradient(top, #F9F9F9, #E3E3E3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.buttonUploadFile:hover:before {
+  border-color: black;
+}
+.buttonUploadFile:active:before {
+  background: -webkit-gradient(linear, 0% 40%, 0% 70%, from(#E3E3E3), to(#F9F9F9));
+  background: -webkit-linear-gradient(top, #E3E3E3, #F9F9F9);
+  background: -moz-linear-gradient(top, #E3E3E3, #F9F9F9);
+  background: -ms-linear-gradient(top, #E3E3E3, #F9F9F9);
+  background: -o-linear-gradient(top, #E3E3E3, #F9F9F9);
+  background: linear-gradient(top, #E3E3E3, #F9F9F9);
+}	
+	</style>
+	<script src="./Actividad3_files/gameconstants.js.php" type="text/javascript"></script>
+	<script src="./Actividad3_files/lang.js.descarga" type="text/javascript"></script>
+	<script src="./Actividad3_files/ajaxfileupload.js.descarga" type="text/javascript"></script>
+	<script src="./Actividad3_files/placeholder.js.descarga" type="text/javascript"></script>
+	<script src="./Actividad3_files/functions.js.descarga" type="text/javascript"></script>
+		
+	<script src="./Actividad3_files/busquedas.js.descarga" type="text/javascript"></script>
+	
+	<script src="./Actividad3_files/cookielawinfo.js.descarga"></script>
+	
+	<script type="text/javascript">
+	var SITE = SITE || {};
+	 
+	SITE.fileInputs = function() {
+	  var $this = $(this),
+	      $val = $this.val(),
+	      valArray = $val.split('\\'),
+	      newVal = valArray[valArray.length-1],
+	      $button = $this.siblings('.button'),
+	      $fakeFile = $this.siblings('.file-holder');
+	  if(newVal !== '') {
+	    $button.text('Examinar...');
+	    if($fakeFile.length === 0) {
+	      $button.after('<div class="file-holder">' + newVal + '</div>');
+	    } else {
+	      $fakeFile.text(newVal);
+	    }
+	  }
+	};
+	 
+	$(document).ready(function() {
+	  $('.file-wrapper input[type=file]').bind('change focus click', SITE.fileInputs);
+	});
+
+	jQuery(document).ready(function() {
+		
+		cli_show_cookiebar({
+			html: LOC.cookieLaw,
+			settings: '{"animate_speed_hide":"500","animate_speed_show":"500","background":"#f7f7f7","border":"#cccccc","border_on":true,"button_1_button_colour":"#404040","button_1_button_hover":"#333333","button_1_link_colour":"#fff","button_1_as_button":true,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"font_family":"inherit","notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#222222","show_once_yn":false,"show_once":"10000","show_once_dani":true}'
+		});
+		
+	});
+	</script>	
+	
+	
+		
+<link rel="stylesheet" href="./Actividad3_files/owl.carousel.css">
+<link rel="stylesheet" href="./Actividad3_files/owl.theme.css">
+<script src="./Actividad3_files/owl.carousel.js.descarga"></script>
+		
+<script src="./Actividad3_files/jquery.balloon.js.descarga" type="text/javascript"></script>		
+
+<script src="./Actividad3_files/gamescreen_31.js.descarga" type="text/javascript"></script>
+		<script type="text/javascript">
+						var g_GameID = 46250;
+					</script>	<link rel="image_src" href="./Actividad3_files/da732662d870e7e73420bac1b2abc31b.png">
+
+	<meta name="description" content="Une correctamente">
+
+	<meta property="og:type" content="game">
+	<meta property="og:image" content="https://www.cerebriti.com/uploads/FB_da732662d870e7e73420bac1b2abc31b.png">
+	<meta property="og:url" content="https://www.cerebriti.com/juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad/">
+	<meta property="og:title" content="Manejo de amenazas: Ciberseguridad">
+	<meta property="og:description" content="Une correctamente">
+	<meta property="og:site_name" content="Cerebriti.com">
+	<meta property="fb:app_id" content="371416059610195">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:description" content="Une correctamente">
+	<meta name="twitter:site" content="Cerebriti">
+	
+	<style>
+	.addthis_floating_style {background-color:transparent; position:static;}
+	.addthis_floating_style.addthis_counter_style {width:75px;}
+	</style>
+	
+	
+
+
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-35863690-1', 'auto');  // Replace with your property ID.
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+	
+<link rel="preload" href="./Actividad3_files/f.txt" as="script"><script type="text/javascript" src="./Actividad3_files/f.txt"></script><link rel="preload" href="./Actividad3_files/f(1).txt" as="script"><script type="text/javascript" src="./Actividad3_files/f(1).txt"></script><link rel="preload" href="https://pagead2.googlesyndication.com/pagead/js/r20190528/r20190131/show_ads_impl.js" as="script"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body><div id="cookie-law-info-bar" style="display: none; background-color: rgb(247, 247, 247); color: rgb(34, 34, 34); font-family: inherit; border-top: 4px solid rgb(204, 204, 204); position: fixed; bottom: 0px;"><span>Este sitio web utiliza cookies de terceros con la finalidad de analizar el uso que hace de nuestra web. Si continúa navegando entendemos que acepta su uso. <a href="http://www.cerebriti.com/informacion/aviso-legal/" id="cookie_action_close_header" class="small cli-plugin-button cli-plugin-main-button" style="color: rgb(255, 255, 255); background-color: rgb(64, 64, 64);">cerrar mensaje</a> Más información  <a href="http://www.cerebriti.com/informacion/aviso-legal/" id="CONSTANT_OPEN_URL" target="_new" class="cli-plugin-main-link" style="color: rgb(68, 68, 68);">aquí</a></span></div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){	
+	
+			if (!$.browser.opera) {
+	    
+				// select element styling
+				$('select.select320').each(function(){
+					var title = $(this).attr('title');
+					if( $('option:selected', this).val() != ''  ) title = $('option:selected',this).text();
+					$(this)
+						.css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+						.after('<span class="select320">' + title + '</span>')
+						.change(function(){
+							val = $('option:selected',this).text();
+							$(this).next().text(val);
+							})
+				});
+	
+			};
+			
+		});
+	</script>	
+
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		/*$('#barraDeHerramientasBotonBusquedas').click(function(){
+			if($('#txtTextoBusquedaBarraHerramientas').val())
+			{
+				window.location = "https://www.cerebriti.com/buscar/"+$('#txtTextoBusquedaBarraHerramientas').val()+"/";
+			}
+		});
+
+		$('#txtTextoBusquedaBarraHerramientas').keypress(function(e){
+		  if(e.which == 13) 
+		  {
+				if($(this).val())
+				{
+					window.location = "https://www.cerebriti.com/buscar/"+$(this).val()+"/";
+				}
+		  }
+		});*/
+
+		$('#bottombar_header_aleatorio').click(function(){
+			window.location = "https://www.cerebriti.com/juegos-de-ciencias/partes-de-la-palanca/";
+		});		
+	});
+	</script>
+
+	<div id="header">
+		<div id="topbar_header">
+		
+		
+		
+			<a href="https://www.cerebriti.com/" id="linkHeaderLogo"></a>
+			
+			<div id="header_opciones">
+				<a href="https://www.cerebriti.com/">Juegos</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.cerebriti.com/ranking/general/" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Botón Menu Ranking&#39;, &#39;Rankings&#39;, &#39;&#39;);">Ránking</a>&nbsp;&nbsp;
+				
+				<a href="https://www.cerebriti.com/editar-juego/nuevo/"><div id="headerOptionButtonCrearJuego"><span>Crea tu juego</span></div></a>
+				
+			</div>			
+			
+			
+			<div id="header_perfilJugador">
+			
+				<script type="text/javascript">
+				$(document).ready(function(){
+					$('#header_perfilJugador_iniciarSesion').click(function(){
+						$('#fondoDialogo').show();
+						$('#ventanaDialogoLogin').show();
+					});
+					$('#header_perfilJugador_iniciarSesion2').click(function(){
+						$('#fondoDialogo').show();
+						$('#ventanaDialogoLogin').show();
+					});					
+					$('#header_perfilJugador_flechaInicioSesion').click(function(){
+						$('#fondoDialogo').show();
+						$('#ventanaDialogoLogin').show();
+					});
+					
+				});
+				</script>
+
+				<!-- USUARIO NO REGISTRADO -->
+				<div id="header_holaDesconocido">
+					<span id="header_perfilJugador_labelAviso">Regístrate</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<span id="header_perfilJugador_iniciarSesion">Inicia sesión&nbsp;</span>
+					<img src="./Actividad3_files/flecha_header_iniciosesion.gif" id="header_perfilJugador_flechaInicioSesion">
+				</div> 
+			</div>			
+			
+			
+			<div id="header_containerBusquedas">
+				<div id="barraDeHerramientasContainerBusquedas">
+				
+					<input type="text" name="txtTextoBusquedaBarraHerramientas" id="txtTextoBusquedaBarraHerramientas" placeholder="Buscar por juego, palabra clave, etc">
+				</div>
+				<div id="barraDeHerramientasBotonBusquedas">
+					
+				</div>
+			</div>			
+		
+		</div>
+		
+		<div id="bottombar_header">
+		
+			<div id="bottombar_header_container">
+				
+			<table width="100%">
+			<tbody><tr>
+			<td width="1%"></td>
+				
+					
+				
+					<td style="text-align:center;" width="6%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-ciencias/">Ciencias</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="8%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-matematicas/">Matemáticas</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="7%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-geografia/">Geografía</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="6%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-historia/">Historia</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="5%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-lengua/">Lengua</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="7%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-literatura/">Literatura</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="6%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-idiomas/">Idiomas</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="4%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-arte/">Arte</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="5%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-musica/">Música</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="4%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-cine/">Cine</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="4%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-television/">TV</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="7%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-tecnologia/">Tecnología</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="6%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-deportes/">Deportes</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="5%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-motor/">Motor</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="4%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-ocio/">Ocio</a></td>
+					
+<td style="text-align:center; color:#dcdcdc;" width="8px">|</td>				
+					<td style="text-align:center;" width="5%"><a class="bottombar_header_categoria" href="https://www.cerebriti.com/juegos-de-marcas/">Marcas</a></td>
+				
+
+				
+				<td width="3%"></td>
+				<td width="100px"><div id="bottombar_header_aleatorio"></div></td>
+				
+				</tr>				
+				
+				</tbody></table>
+				
+				
+				<!-- <div id="bottombar_header_categorias">
+				
+				
+					<a href="https://www.cerebriti.com/juegos-de-ciencias/">Ciencias</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-matematicas/">Matem&aacute;ticas</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-geografia/">Geograf&iacute;a</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-historia/">Historia</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-lengua/">Lengua</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-literatura/">Literatura</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-idiomas/">Idiomas</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-arte/">Arte</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-musica/">M&uacute;sica</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-cine/">Cine</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-television/">TV</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/">Tecnolog&iacute;a</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-deportes/">Deportes</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-motor/">Motor</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-ocio/">Ocio</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-marcas/">Marcas</a>
+				
+
+				</div>
+			
+				<div id="bottombar_header_aleatorio"></div>-->
+			</div>
+		
+		</div>
+	</div><!-- header -->
+		
+		<script type="text/javascript">
+		$(document).ready(function(){
+			
+			/*$('.h_dB_cuerpoBloque_zonaLink').on('hover', function(){
+				var myInfo = $(this).data('myinfo');
+				$('#'+myInfo).css('background-color', '#f1f1f1');
+			},
+			function(){
+				var myInfo = $(this).data('myinfo');
+				$('#'+myInfo).css('background-color', '#FFF');
+			});*/
+
+			$(".h_dB_cuerpoBloque_zonaLink").live('mouseenter', function() { 
+				var myInfo = $(this).data('myinfo');
+				$('#'+myInfo).css('background-color', '#f1f1f1');
+			}).live('mouseleave', function () {
+				var myInfo = $(this).data('myinfo');
+				$('#'+myInfo).css('background-color', '#FFF');
+			});
+
+			/*$('#txtTextoBusquedaBarraHerramientas').focus(function(){
+				$('#header_desplegableBusquedas').show();
+			});*/
+			
+			/*$('#txtTextoBusquedaBarraHerramientas').blur(function(){
+			  $('#header_desplegableBusquedas').hide();
+			});*/
+			
+
+		});
+		</script>
+
+
+		<div id="header_desplegableBusquedas">
+			<div id="header_desplegableBusquedas_pichurrico"></div>
+			
+			<div id="header_desplegableBusquedas_cuerpo">
+			
+				<div id="header_desplegableBusquedas_juegos">
+			
+					<div class="header_desplegableBusquedas_lineaTitulo">
+						<div class="h_dB_lineaTitulo_texto">Juegos</div>
+						<div class="h_dB_lineaTitulo_verTodos"><a id="verTodosJuegosHRef" href="http://localhost/cerebriti/juegos-de-arte/">Ver todos</a></div>
+					</div>
+					<div class="header_desplegableBusquedas_picoLineaTitulo"></div>
+				
+					<div id="header_desplegableBusquedas_cuerpoJuegos">
+					
+						<a href="http://localhost/cerebriti/juegos-de-arte/"><div class="h_dB_cuerpoBloque_zonaLink" data-myinfo="desplegableBusquedas_linea1"></div></a>
+						<div id="desplegableBusquedas_linea1" class="h_dB_cuerpoBloque_zonaInfo">
+							<img src="./Actividad3_files/default_avatar_juegos.png">
+							<div class="h_dB_cuerpoBloque_zonaInfo_texto">Capitales de <span class="gordico">Europa</span> con mar</div>
+						</div>
+						
+					</div>
+				
+				</div>
+				
+				<div id="header_desplegableBusquedas_etiquetas">
+				
+					<div class="header_desplegableBusquedas_lineaTitulo">
+						<div class="h_dB_lineaTitulo_texto">Etiquetas</div>
+					</div>
+					<div class="header_desplegableBusquedas_picoLineaTitulo"></div>
+				
+					<div id="header_desplegableBusquedas_cuerpoEtiquetas">
+					
+						<a href="http://localhost/cerebriti/juegos-de-arte/"><div class="h_dB_cuerpoBloque_zonaLink" data-myinfo="desplegableBusquedas_linea2"></div></a>
+						<div id="desplegableBusquedas_linea2" class="h_dB_cuerpoBloque_zonaInfo">
+							<div class="h_dB_cuerpoBloque_zonaInfo_textoLargo"># Monumentos de <span class="gordico">Europa</span></div>
+						</div>
+						
+					</div>		
+					
+				</div>	
+				
+				<div id="header_desplegableBusquedas_usuarios">
+			
+					<div class="header_desplegableBusquedas_lineaTitulo">
+						<div class="h_dB_lineaTitulo_texto">Usuarios</div>
+					</div>
+					<div class="header_desplegableBusquedas_picoLineaTitulo"></div>
+				
+					<div id="header_desplegableBusquedas_cuerpoUsuarios">
+					
+					</div>
+				
+				</div>
+				
+				<div id="header_desplegableBusquedas_canales">
+			
+					<div class="header_desplegableBusquedas_lineaTitulo">
+						<div class="h_dB_lineaTitulo_texto">Canales</div>
+					</div>
+					<div class="header_desplegableBusquedas_picoLineaTitulo"></div>
+				
+					<div id="header_desplegableBusquedas_cuerpoCanales">
+					
+					</div>
+				
+				</div>				
+				
+				<div class="header_desplegableBusquedas_lineaCierre"></div>
+			
+			</div>
+		</div>
+		
+	<div id="fondoDialogo">
+	
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#ventanaDialogoError_botonCerrar').click(function(){
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoError').hide();
+
+				//window.location = 'https://www.cerebriti.com/';
+			});
+		});
+
+		function lanzarDialogoError(mensaje)
+		{
+			$('#ventanaDialogoError_texto').html(mensaje);
+			$('#fondoDialogo').show();
+			$('#ventanaDialogoError').show();			
+		}
+		</script>
+
+		<div id="ventanaDialogoError">
+			<div id="ventanaDialogoError_botonCerrar"></div>
+			<div id="ventanaDialogoError_texto"></div>
+		</div>
+		
+		<div id="ventanaDialogoRegister">
+			<div id="ventanaDialogoRegister_botonCerrar"></div>
+			<div id="ventanaDialogoRegister_titulo">¿Todavia no estas registrado?</div>
+			<div id="ventanaDialogoRegister_subtitulo">¡Unete a Cerebriti! Podras crear juegos, sumar puntos y competir con tus amigos para demostrar quien es el que mas sabe</div>
+			<div style="width:100%; height:1px; position:absolute; top:132px; left:0px; background-color:#FFF;"></div>
+			
+			<div id="ventanaDialogoRegister_containerFacebook">
+				<div id="ventanaDialogoRegister_botonFacebook"></div>
+			</div>
+			
+			<div id="ventanaDialogoRegister_laLetraO">O</div>
+			
+			<div id="ventanaDialogoRegister_containerRegister">
+				
+			<div id="ventanaDialogoRegister_containerIniciar">
+				<span id="entanaDialogoRegister_iniciarText">Registrate con el mail <img src="./Actividad3_files/flecha_blanca.png"></span>
+			</div>
+			
+			<div id="ventanaDialogoRegister_letraPequena">Das tu consentimiento para que tus datos personales sean transferidos y procesados por Cerebriti</div>
+			
+			<div id="ventanaDialogoRegister_containerLinks">¿Ya tienes cuenta en Cerebriti?</div>
+			</div>
+		
+		</div>
+			<script type="text/javascript">
+			$(document).ready(function(){
+			
+				$('#ventanaDialogoRegisterBrand_boton').click(function(){
+			
+					$.support.cors = true;
+					$.ajax({
+				        url: g_gameURL+"ws_ajax.php",
+				        data: "wsf=111&n="+$('#txtBrandName').val(),
+				        type: "POST",
+				        async: false,
+				        cache: false,
+				        dataType: "json",
+				        success: function(data, textStatus, jqXHR)
+				        {
+				        	if(data.exists == '0')
+				        	{
+				  					$('#formRegisterBrand').submit();		
+				        	}
+				        	else
+				        	{
+				        		$('#txtBrandName').validationEngine('showPrompt', "El nombre de canal ya existe, elija otro", 'red');
+			
+				        		setTimeout(function(){
+				        			$('#txtBrandName').validationEngine('hide');
+				        			$('#txtBrandName').val("");
+				        		}, 3000);
+				        	}
+				        },
+				        timeout: 3000
+					});
+				});
+				
+			});
+			</script>		
+		
+			<div id="ventanaDialogoRegisterBrand">
+				<div id="ventanaDialogoRegisterBrand_botonCerrar"></div>
+
+				<form id="formRegisterBrand" method="POST" action="https://www.cerebriti.com/usuario/registro-marca/">
+				
+					<div id="ventanaDialogoRegisterBrand_containerBrandname" class="ventanaDialogoRegisterBrand_inputContainer">
+						<input type="text" name="txtBrandName" id="txtBrandName" style="width:280px;">
+					</div>
+				
+				</form>
+				
+				<div id="ventanaDialogoRegisterBrand_boton">
+					<span>Crear canal</span>
+				</div>
+			
+			</div>
+	 		<script type="text/javascript">
+ 		$(document).ready(function(){
+ 			
+ 			$('#header_perfilJugador_labelAviso').click(function(){
+ 				//openRegisterOptionsDialog();
+ 				window.location = g_friendlyUrlBegin+"usuario/registro/";
+ 			});
+ 			
+ 			$('#ventanaDialogoRegister_botonCerrar').click(function(){
+ 				$('#fondoDialogo').hide();
+ 				$('#ventanaDialogoRegister').hide();
+ 			});
+ 			
+ 			$('#ventanaDialogoRegister_botonFacebook').click(function(){
+ 				window.location = g_friendlyUrlBegin+"usuario/registro-facebook/";
+ 			});
+ 			
+ 			$('#entanaDialogoRegister_iniciarText').click(function(){
+ 				window.location = g_friendlyUrlBegin+"usuario/registro/";
+ 			});
+ 			
+ 			$('#ventanaDialogoRegister_containerLinks').click(function(){
+ 				$('#fondoDialogo').hide();
+ 				$('#ventanaDialogoRegister').hide();		
+ 				openLoginDialog();
+ 			});
+ 			
+			function openRegisterOptionsDialog()
+			{
+				$('#fondoDialogo').show();
+				$('#ventanaDialogoRegister').show();	
+			}
+
+			function openLoginDialog()
+			{
+				$('#fondoDialogo').show();
+				$('#ventanaDialogoLogin').show();	
+			}
+
+			function closeLoginDialog()
+			{
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoLogin').hide();	
+			}
+
+			$('#ventanaDialogoLogin_botonCerrar').click(function(){
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoLogin').hide();
+			});
+
+			$('#ventanaDialogoLogin_containerIniciar').click(function(){
+
+				$.support.cors = true;
+				$.ajax({
+			        url: g_gameURL+"ws_ajax.php",
+			        data: "wsf=108&u="+$('#txtLoginEmail').val()+"&p="+$('#txtLoginPassword').val(),
+			        type: "POST",
+			        async: false,
+			        cache: false,
+			        dataType: "json",
+			        success: function(data, textStatus, jqXHR)
+			        {
+			        	if(data.exists == '1')
+			        	{
+			  					var currURL = window.location.pathname;
+			  					$('#formLogin').attr("action", currURL);
+			  					$('#formLogin').submit();		
+			        	}
+			        	else
+			        	{
+			        		//$('#txtLoginEmail').validationEngine('showPrompt', 'El nombre de usuario o la contrase&ntilde;a introducidos no son correctos', 'red');
+			        		$('#txtLoginPassword').validationEngine('showPrompt', "El nombre de usuario o la contrase&ntilde;a introducidos no son correctos", 'red');
+
+			        		setTimeout(function(){
+			        			//$('#txtLoginEmail').validationEngine('hide');
+			        			$('#txtLoginEmail').val("");
+			        			$('#txtLoginPassword').validationEngine('hide');
+			        			$('#txtLoginPassword').val("");
+			        		}, 3000);
+			        	}
+			        },
+			        timeout: 3000
+				});
+			});
+
+			$('#ventanaDialogoLogin_botonFacebook').click(function(){
+				$('#formLoginFacebook').submit();
+			});
+
+/*			$('#loginOptionRegister').click(function(){
+				closeLoginDialog();
+				openRegisterOptionsDialog();
+			});*/
+
+			$('#loginOptionRecover').click(function(){
+				$('#ventanaDialogoLogin').hide();
+				$('#ventanaDialogoRecover').show();
+			});			
+		});
+		</script>
+ 
+		<div id="ventanaDialogoLogin">
+			<div id="ventanaDialogoLogin_botonCerrar"></div>
+			<div id="ventanaDialogoLogin_titulo">Iniciar sesión Cerebriti</div>
+			<div style="width:100%; height:1px; position:absolute; top:72px; left:0px; background-color:#FFF;"></div>
+			
+			<form method="POST" action="https://www.cerebriti.com/usuario/" id="formLoginFacebook">
+				<input type="hidden" name="f" id="f" value="69">
+			</form>
+			
+			<div id="ventanaDialogoLogin_containerFacebook">
+				<div id="ventanaDialogoLogin_botonFacebook"></div>
+			</div>
+			
+			<div id="ventanaDialogoLogin_laLetraO">O</div>
+			
+			<div id="ventanaDialogoLogin_containerLogin">
+			<form method="POST" action="https://www.cerebriti.com/usuario/" id="formLogin">
+			<input type="hidden" name="f" id="f" value="60">
+			
+				<span id="ventanaDialogoLogin_labelEmail">Tu dirección de correo electrónico:</span>
+				<div id="ventanaDialogoLogin_containerEmail" class="ventanaDialogoLogin_inputContainer"><input type="text" name="txtLoginEmail" id="txtLoginEmail" style="width:300px;"></div>
+				
+				<span id="ventanaDialogoLogin_labelPassword">Tu contraseña:</span>
+				<div id="ventanaDialogoLogin_containerPassword" class="ventanaDialogoLogin_inputContainer"><input type="password" name="txtLoginPassword" id="txtLoginPassword" style="width:300px;"></div>
+				
+				<div id="ventanaDialogoLogin_containerRecordarme"><input type="checkbox" name="chkRecordarme" id="chkRecordarme" value="SI" checked="checked">Recordarme la próxima vez</div>
+				
+				<div id="ventanaDialogoLogin_containerIniciar">
+					<span id="entanaDialogoLogin_iniciarText">Iniciar sesión <img src="./Actividad3_files/flecha_blanca.png"></span>
+				</div>
+			
+				<div id="ventanaDialogoLogin_containerLinks">¿<span id="loginOptionRecover">Has olvidado tu contraseña?</span>				
+				&nbsp;&nbsp;<span class="linkSeparator">|</span>&nbsp;&nbsp;
+				
+				¿<a href="https://www.cerebriti.com/usuario/registro/"><span id="loginOptionRegister">Todavía no estás registrado?</span></a></div>
+			
+			</form>
+			</div>
+			
+		</div>
+ 		<script type="text/javascript">
+ 		$(document).ready(function(){
+ 			
+			$('#ventanaDialogoLoginCrearJuego_botonCerrar').click(function(){
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoLoginCrearJuego').hide();
+			});
+
+			$('#ventanaDialogoLoginCrearJuego_containerIniciar').click(function(){
+
+				$.support.cors = true;
+				$.ajax({
+			        url: g_gameURL+"ws_ajax.php",
+			        data: "wsf=108&u="+$('#txtLoginEmail4').val()+"&p="+$('#txtLoginPassword4').val(),
+			        type: "POST",
+			        async: false,
+			        cache: false,
+			        dataType: "json",
+			        success: function(data, textStatus, jqXHR)
+			        {
+			        	if(data.exists == '1')
+			        	{
+			  					var currURL = window.location.pathname;
+			  					$('#formLogin4').attr("action", currURL);
+			  					$('#formLogin4').submit();		
+			        	}
+			        	else
+			        	{
+			        		//$('#txtLoginEmail4').validationEngine('showPrompt', 'El nombre de usuario o la contrase&ntilde;a introducidos no son correctos', 'red');
+			        		$('#txtLoginPassword4').validationEngine('showPrompt', "El nombre de usuario o la contrase&ntilde;a introducidos no son correctos", 'red');
+
+			        		setTimeout(function(){
+			        			//$('#txtLoginEmail4').validationEngine('hide');
+			        			$('#txtLoginEmail4').val("");
+			        			$('#txtLoginPassword4').validationEngine('hide');
+			        			$('#txtLoginPassword4').val("");
+			        		}, 3000);
+			        	}
+			        },
+			        timeout: 3000
+				});
+			});
+
+			$('#ventanaDialogoLoginCrearJuego_botonFacebook').click(function(){
+				$('#formLoginFacebook4').submit();
+			});
+
+			/*$('#loginCrearJuegoOptionRegister').click(function(){
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoLoginCrearJuego').hide();	
+				
+				$('#fondoDialogo').show();
+				$('#ventanaDialogoRegister').show();	
+				
+			});*/
+
+			$('#loginOptionCrearJuegoRecover').click(function(){
+				$('#ventanaDialogoLoginCrearJuego').hide();
+				$('#ventanaDialogoRecover').show();
+			});			
+		});
+		</script>
+ 
+		<div id="ventanaDialogoLoginCrearJuego">
+			<div id="ventanaDialogoLoginCrearJuego_botonCerrar"></div>
+		
+			<form method="POST" action="https://www.cerebriti.com/usuario/" id="formLoginFacebook4">
+				<input type="hidden" name="f" id="f" value="69">
+			</form>
+			
+			
+			<div id="ventanaDialogoLoginCrearJuego_botonFacebook"></div>
+			
+			<form method="POST" action="https://www.cerebriti.com/usuario/" id="formLogin4">
+				<input type="hidden" name="f" id="f" value="60">
+			
+				<input type="text" class="ventanaDialogoLoginCrearJuego_input" placeholder="Tu dirección de correo electrónico" name="txtLoginEmail4" id="txtLoginEmail4" style="width:250px;">
+				
+				<input type="password" class="ventanaDialogoLoginCrearJuego_input" placeholder="Tu contraseña" name="txtLoginPassword4" id="txtLoginPassword4" style="width:250px;">
+				
+				<div id="ventanaDialogoLoginCrearJuego_containerIniciar">
+					<span id="ventanaDialogoLoginCrearJuego_iniciarText">Iniciar sesión <img src="./Actividad3_files/flecha_blanca.png"></span>
+				</div>
+			
+				<span id="loginOptionCrearJuegoRecover">¿Has olvidado tu contraseña?</span>
+				<a href="https://www.cerebriti.com/usuario/registro/"><div id="loginCrearJuegoOptionRegister">O regístrate con tu <span class="gordico">correo electrónico</span></div></a>
+			
+			</form>
+
+		</div>
+ 		<script type="text/javascript">
+ 		$(document).ready(function(){
+ 			
+			$('#ventanaDialogoLoginRetar_botonCerrar').click(function(){
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoLoginRetar').hide();
+			});
+
+			$('#ventanaDialogoLoginRetar_containerIniciar').click(function(){
+
+				$.support.cors = true;
+				$.ajax({
+			        url: g_gameURL+"ws_ajax.php",
+			        data: "wsf=108&u="+$('#txtLoginEmail5').val()+"&p="+$('#txtLoginPassword5').val(),
+			        type: "POST",
+			        async: false,
+			        cache: false,
+			        dataType: "json",
+			        success: function(data, textStatus, jqXHR)
+			        {
+			        	if(data.exists == '1')
+			        	{
+			  					var currURL = window.location.pathname;
+			  					$('#formLogin5').attr("action", currURL);
+			  					$('#formLogin5').submit();		
+			        	}
+			        	else
+			        	{
+			        		//$('#txtLoginEmail5').validationEngine('showPrompt', 'El nombre de usuario o la contrase&ntilde;a introducidos no son correctos', 'red');
+			        		$('#txtLoginPassword5').validationEngine('showPrompt', "El nombre de usuario o la contrase&ntilde;a introducidos no son correctos", 'red');
+
+			        		setTimeout(function(){
+			        			//$('#txtLoginEmail5').validationEngine('hide');
+			        			$('#txtLoginEmail5').val("");
+			        			$('#txtLoginPassword5').validationEngine('hide');
+			        			$('#txtLoginPassword5').val("");
+			        		}, 3000);
+			        	}
+			        },
+			        timeout: 3000
+				});
+			});
+
+			$('#ventanaDialogoLoginRetar_botonFacebook').click(function(){
+				$('#formLoginFacebook5').submit();
+			});
+
+			/*$('#loginRetarOptionRegister').click(function(){
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoLoginRetar').hide();	
+				
+				$('#fondoDialogo').show();
+				$('#ventanaDialogoRegister').show();	
+				
+			});*/
+
+			$('#loginOptionRetarRecover').click(function(){
+				$('#ventanaDialogoLoginRetar').hide();
+				$('#ventanaDialogoRecover').show();
+			});			
+		});
+		</script>
+ 
+		<div id="ventanaDialogoLoginRetar">
+			<div id="ventanaDialogoLoginRetar_botonCerrar"></div>
+		
+			<form method="POST" action="https://www.cerebriti.com/usuario/" id="formLoginFacebook5">
+				<input type="hidden" name="f" id="f" value="69">
+			</form>
+			
+			
+			<div id="ventanaDialogoLoginRetar_botonFacebook"></div>
+			
+			<form method="POST" action="https://www.cerebriti.com/usuario/" id="formLogin5">
+				<input type="hidden" name="f" id="f" value="60">
+			
+				<input type="text" class="ventanaDialogoLoginRetar_input" placeholder="Tu dirección de correo electrónico" name="txtLoginEmail5" id="txtLoginEmail5" style="width:250px;">
+				
+				<input type="password" class="ventanaDialogoLoginRetar_input" placeholder="Tu contraseña" name="txtLoginPassword5" id="txtLoginPassword5" style="width:250px;">
+				
+				<div id="ventanaDialogoLoginRetar_containerIniciar">
+					<span id="ventanaDialogoLoginRetar_iniciarText">Iniciar sesión <img src="./Actividad3_files/flecha_blanca.png"></span>
+				</div>
+			
+				<span id="loginOptionRetarRecover">¿Has olvidado tu contraseña?</span>
+				<a href="https://www.cerebriti.com/usuario/registro/"><div id="loginRetarOptionRegister">O regístrate con tu <span class="gordico">correo electrónico</span></div></a>
+			
+			</form>
+
+		</div>
+ 		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#ventanaDialogoRecover_botonCerrar').click(function(){
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoRecover').hide();
+			});
+
+			$('#ventanaDialogoRecover_containerIniciar').click(function(){
+				$('#formRecover').submit();
+			});
+		});
+		</script>
+ 
+		<div id="ventanaDialogoRecover">
+			<div id="ventanaDialogoRecover_botonCerrar"></div>
+			<div id="ventanaDialogoRecover_titulo">¿Olvidaste tu contraseña?</div>
+			<div style="width:100%; height:1px; position:absolute; top:72px; left:0px; background-color:#FFF;"></div>
+			
+			<div id="ventanaDialogoRecover_explicacion">Para recuperar tu contraseña, introduce tu dirección de email y te enviaremos instrucciones sobre cómo crear una nueva contraseña.</div>
+			
+			<div id="ventanaDialogoRecover_containerLogin">
+			<form method="POST" action="https://www.cerebriti.com/" id="formRecover">
+				<input type="hidden" name="f" id="f" value="74">
+			
+				<span id="ventanaDialogoRecover_labelEmail">Tu dirección de correo electrónico:</span>
+				<div id="ventanaDialogoRecover_containerEmail" class="ventanaDialogoRecover_inputContainer"><input type="text" name="txtEmail" id="txtEmail" style="width:300px;"></div>
+				
+				<div id="ventanaDialogoRecover_containerIniciar">
+					<span id="ventanaDialogoRecover_iniciarText">Solicitar <img src="./Actividad3_files/flecha_blanca.png"></span>
+				</div>
+			
+			</form>
+			</div>
+			
+		</div>
+ 		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#ventanaDialogoContact_botonCerrar').click(function(){
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoContact').hide();
+			});
+
+			$('#ventanaDialogoContact_containerIniciar').click(function(){
+				$('#formContact').submit();
+			});
+
+			$('#footerContactarLink').click(function(){
+				$('#ventanaDialogoContact_texto').hide();
+				$('#fondoDialogo').show();
+				$('#ventanaDialogoContact').show();					
+			});
+
+			$('#footerPublicidadLink').click(function(){
+				$('#ventanaDialogoContact_texto').show();
+				$('#fondoDialogo').show();
+				$('#ventanaDialogoContact').show();					
+			});			
+		});
+		</script>
+ 
+		<div id="ventanaDialogoContact">
+			<div id="ventanaDialogoContact_botonCerrar"></div>
+			<div id="ventanaDialogoContact_titulo">Contacta con Cerebriti</div>
+			<div style="width:100%; height:1px; position:absolute; top:72px; left:0px; background-color:#FFF;"></div>
+			
+			<div id="ventanaDialogoContact_texto">¿Te interesaría publicitarte en nuestra página? Déjanos tus datos y nos pondremos en contacto contigo</div>
+			
+			<div id="ventanaDialogoContact_containerLogin">
+			<form method="POST" action="https://www.cerebriti.com/juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad" id="formContact">
+				<input type="hidden" name="f" id="f" value="77">
+			
+				<span id="ventanaDialogoContact_labelNombre">Tu nombre y apellidos:</span>
+				<div id="ventanaDialogoContact_containerNombre" class="ventanaDialogoContact_inputContainer">
+					<input type="text" name="txtNombre" id="txtNombre" size="46">
+				</div>
+
+				<span id="ventanaDialogoContact_labelEmail">Tu dirección de correo electrónico:</span>
+				<div id="ventanaDialogoContact_containerEmail" class="ventanaDialogoContact_inputContainer">
+					<input type="text" name="txtEmail" id="txtEmail" size="46">
+				</div>
+				
+				<span id="ventanaDialogoContact_labelMensaje">Mensaje:</span>
+				<div id="ventanaDialogoContact_containerMensaje" class="ventanaDialogoContact_inputContainer">
+					<input type="text" name="txtMensaje" id="txtMensaje" size="46">
+				</div>				
+				
+				<div id="ventanaDialogoContact_containerIniciar">
+					<span id="ventanaDialogoContact_iniciarText">Contactar <img src="./Actividad3_files/flecha_blanca.png"></span>
+				</div>
+			
+			</form>
+			</div>
+			
+		</div>
+	
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#ventanaDialogoFeeedback_botonCerrar').click(function(){
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoFeeedback').hide();
+			});
+		});
+		
+		function lanzarDialogoFeedback(mensaje, sinFondo)
+		{
+			if(!sinFondo)
+				$('#fondoDialogo').show();
+			$('#ventanaDialogoFeeedback_mensaje').html(mensaje);
+			$('#ventanaDialogoFeeedback').show();
+		}
+		</script>
+
+		<div id="ventanaDialogoFeeedback">
+			<div id="ventanaDialogoFeeedback_botonCerrar"></div>
+			<div id="ventanaDialogoFeeedback_mensaje"></div>
+			<div id="ventanaDialogoFeeedback_pichurrico"></div>
+		</div>
+
+		
+		<script type="text/javascript">
+		function openDialogoDenunciarJuego()
+		{
+			$('#fondoDialogo').show();
+			$('#ventanaDialogoDenunciaJuego').show();
+		}
+
+		$(document).ready(function(){
+
+			$('#ventanaDialogoDenunciaJuego_botonCerrar').click(function(){
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoDenunciaJuego').hide();
+			});			
+
+			$('#ventanaDialogoDenunciaJuego_containerIniciar').click(function(){
+				$('#juegoid').val(g_GameID);
+				$('#formDenunciarJuego').submit();
+				$('#fondoDialogo').hide();
+				$('#ventanaDialogoDenunciaJuego').hide();				
+			});	
+
+			$('#botonDenunciarBarraFooter').click(function(){
+				
+				openDialogoDenunciarJuego();
+			});
+		});
+		</script>
+
+		<form id="formDenunciarJuego" method="post" action="https://www.cerebriti.com/juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad" enctype="multipart/form-data">
+		<input type="hidden" name="f" id="f" value="12">
+		<input type="hidden" name="juegoid" id="juegoid" value=""> 
+		
+		<div id="ventanaDialogoDenunciaJuego">
+			<div id="ventanaDialogoDenunciaJuego_botonCerrar"></div>
+			
+			
+			<div class="ventanaDialogoDenunciaJuego_lineaCuerpo">
+				Nombre y apellidos: <input type="text" name="nombreApellidosDenunciante">
+			</div>			
+			
+			<div class="ventanaDialogoDenunciaJuego_lineaCuerpo">
+				Email: <input type="text" name="emailDenunciante">
+			</div>				
+			
+			<div id="ventanaDialogoDenunciaJuego_subtitulo">¿Cual es la razón por la que quieres denunciar este juego?</div>
+	
+			<div id="ventanaDialogoDenunciaJuego_containerCuerpo">
+				
+				<div class="ventanaDialogoDenunciaJuego_lineaCuerpo">
+					<input type="radio" name="motivo" value="INCORRECTAS" checked="">
+					Las respuestas no son las correctas o no están actualizadas.				</div>
+				
+				<div class="ventanaDialogoDenunciaJuego_lineaCuerpo">
+					<textarea name="comentarios" cols="50" rows="4" placeholder="Escribe aquí donde has encontrado el error para que podamos corregirlo"></textarea>
+				</div>
+	
+				<div class="ventanaDialogoDenunciaJuego_lineaCuerpo">
+					<input type="radio" name="motivo" value="INAPROPIADO">
+					El contenido es inapropiado.				</div>
+	
+				<div class="ventanaDialogoDenunciaJuego_lineaCuerpo">
+					<input type="radio" name="motivo" value="CONTENIDO">
+					Soy el dueño de la propiedad intelectual de alguno de los recursos utilizados en el juego (imágenes, audio, ...)				</div>
+				
+				<div id="ventanaDialogoDenunciaJuego_containerBoton">
+					<div id="ventanaDialogoDenunciaJuego_containerIniciar">
+						<span id="ventanaDialogoDenunciaJuego_iniciarText">Denunciar</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="clear_both_div"></div>
+			
+		</div>
+		</form>
+
+	</div>
+	<script type="text/javascript">
+
+		var g_VisibleBuscarEntreAmigos = false;
+		var g_VisibleBuscarPorEmail = false;
+
+		var g_VisibleRetoAleatorio = false;
+		var g_VisibleBuscarJuego = false;
+
+		var g_retar_NombreJuego = "";
+		var g_retar_PermaJuego = "";
+		var g_retar_idJuego = "";
+		var g_retar_idPartida = -1;		
+	
+		//---------------------------------------------------------------	
+		/*function setupLanzarReto_conocemosRetado(nombreRetado, idRetado)
+		{
+			$('#ventanaDialogoReto_lineaTitulo').html('Has elegido retar a '+nombreRetado+'.');
+			$('#ventanaDialogoReto_lineaSubTitulo').show();
+	
+			$('#ventanaDialogoReto_containerGris_elegirContrario').hide();
+			$('#ventanaDialogoReto_containerGris_elegirJuego').show();
+
+			$('#idRetado').val(idRetado);
+			$('#emailRetado').val('');
+			$('#idJuego').val('');
+			$('#aleatorioCategoriaID').val('');		
+
+			$('#ventanaDialogoRetoContainer').show();
+			$('#fondoDialogo').show();
+			
+			return false;
+		}*/
+		
+		//---------------------------------------------------------------	
+		function setupLanzarReto_conocemosJuego(nombreJuego, permalinkJuego, idJuego, idPartida)
+		{
+			$('#ventanaDialogoReto_lineaTitulo').html("Juego: "+nombreJuego);
+			$('#ventanaDialogoReto_lineaSubTitulo').hide();
+	
+			$('#ventanaDialogoReto_containerGris_elegirContrario').show();
+			$('#ventanaDialogoReto_containerGris_elegirJuego').hide();
+
+			$('#idRetado').val('');
+			$('#emailRetado').val('');
+			$('#idJuego').val(idJuego);
+			$('#nombreJuego').val(nombreJuego);
+			$('#permaJuego').val(permalinkJuego);
+			$('#idPartida').val(idPartida);
+			$('#aleatorioCategoriaID').val('');
+
+			$('#ventanaDialogoRetoContainer').show();
+			$('#fondoDialogo').show();
+
+			$("html,body").scrollTop(20);
+
+			return false;
+		}
+
+		//---------------------------------------------------------------	
+		function setupLanzarReto_conocemosTodo(nombreJuego, permalinkJuego, idJuego, idPartida, nombreRetado, idRetado)
+		{
+			$('#ventanaDialogoReto_lineaTitulo').html("Has elegido retar a "+nombreRetado+'.');
+			$('#ventanaDialogoReto_lineaSubTitulo').show();
+	
+			$('#ventanaDialogoReto_containerGris_elegirContrario').hide();
+			$('#ventanaDialogoReto_containerGris_elegirJuego').hide();
+
+			$('#idRetado').val(idRetado);
+			$('#emailRetado').val('');
+			$('#idJuego').val(idJuego);
+			$('#nombreJuego').val(nombreJuego);
+			$('#permaJuego').val(permalinkJuego);
+			$('#idPartida').val(idPartida);
+			$('#aleatorioCategoriaID').val('');
+
+			$('#ventanaDialogoRetoContainer').show();
+			$('#fondoDialogo').show();
+
+			$("html,body").scrollTop(20);
+
+			return false;
+		}		
+
+		//---------------------------------------------------------------	
+		function setupLanzarReto_conocemosJuego_auto()
+		{
+			$('#ventanaDialogoReto_lineaTitulo').html("Juego: "+g_retar_NombreJuego);
+			$('#ventanaDialogoReto_lineaSubTitulo').hide();
+	
+			$('#ventanaDialogoReto_containerGris_elegirContrario').show();
+			$('#ventanaDialogoReto_containerGris_elegirJuego').hide();
+
+			$('#idRetado').val('');
+			$('#emailRetado').val('');
+			$('#idJuego').val(g_retar_idJuego);
+			$('#nombreJuego').val(g_retar_NombreJuego);
+			$('#permaJuego').val(g_retar_PermaJuego);
+			$('#idPartida').val(g_retar_idPartida);
+			$('#aleatorioCategoriaID').val('');
+
+			$('#ventanaDialogoRetoContainer').show();
+			$('#fondoDialogo').show();
+
+			$("html,body").scrollTop(20);
+
+			return false;
+		}		
+
+		//---------------------------------------------------------------		
+		/*function setupLanzarReto_todasOpciones()
+		{
+			$('#ventanaDialogoReto_lineaTitulo').html('Retar a un amigo:');
+			$('#ventanaDialogoReto_lineaSubTitulo').hide();			
+
+			$('#ventanaDialogoReto_containerGris_elegirContrario').show();
+			$('#ventanaDialogoReto_containerGris_elegirJuego').show();		
+
+			$('#idRetado').val('');
+			$('#emailRetado').val('');
+			$('#idJuego').val('');
+			$('#aleatorioCategoriaID').val('');
+
+			$('#ventanaDialogoRetoContainer').show();
+			$('#fondoDialogo').show();
+
+			return false;
+		}*/
+
+		//---------------------------------------------------------------
+		$(document).ready(function(){
+
+			//$('#cajaBuscarEntreAmigos_cuerpo').hide();
+				$('#vDR_cG_eC_cajaBuscarEntreAmigo_tableJuegoElegido').hide();
+			$('#cajaBuscarPorEmail_cuerpo').hide();
+
+			$('#cajaRetoAleatorio_cuerpo').hide();
+			$('#cajaBuscarJuego_cuerpo').hide();
+				$('#vDR_cG_eJ_cajaBuscarJuego_tableJuegoElegido').hide();
+
+			//---------------------------------------------------
+			$('#ventanaDialogoReto_botonCerrar').click(function(){
+				$('#ventanaDialogoRetoContainer').hide();
+				$('#fondoDialogo').hide();
+			});
+
+			//---------------------------------------------------
+			$('#cajaBuscarEntreAmigos_boton').click(function(){
+				if(!g_VisibleBuscarEntreAmigos)
+				{
+					$('#cajaBuscarEntreAmigos_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+					$('#cajaBuscarEntreAmigos_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+					
+					g_VisibleBuscarEntreAmigos = true;
+					g_VisibleBuscarPorEmail = false;
+					
+					$('#cajaBuscarEntreAmigos_cuerpo').show();
+					$('#cajaBuscarPorEmail_cuerpo').hide();
+						$('#cajaBuscarPorEmail_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+						$('#cajaBuscarPorEmail_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+				}
+				else
+				{
+					$('#cajaBuscarEntreAmigos_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+					$('#cajaBuscarEntreAmigos_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+
+					g_VisibleBuscarEntreAmigos = false;
+					$('#cajaBuscarEntreAmigos_cuerpo').hide();
+				}
+			});
+
+			//---------------------------------------------------
+			$('#cajaBuscarPorEmail_boton').click(function(){
+				if(!g_VisibleBuscarPorEmail)
+				{
+					$('#cajaBuscarPorEmail_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+					$('#cajaBuscarPorEmail_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+					
+					g_VisibleBuscarEntreAmigos = false;
+					g_VisibleBuscarPorEmail = true;
+					
+					$('#cajaBuscarPorEmail_cuerpo').show();
+					$('#cajaBuscarEntreAmigos_cuerpo').hide();
+						$('#cajaBuscarEntreAmigos_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+						$('#cajaBuscarEntreAmigos_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');					
+				}
+				else
+				{
+					$('#cajaBuscarPorEmail_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+					$('#cajaBuscarPorEmail_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+					
+					g_VisibleBuscarPorEmail = false;
+					$('#cajaBuscarPorEmail_cuerpo').hide();
+				}
+			});			
+
+
+
+			//---------------------------------------------------
+			$('#cajaRetoAleatorio_boton').click(function(){
+				if(!g_VisibleRetoAleatorio)
+				{
+					$('#cajaRetoAleatorio_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+					$('#cajaRetoAleatorio_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+					
+					g_VisibleRetoAleatorio = true;
+					g_VisibleBuscarJuego = false;
+					
+					$('#cajaRetoAleatorio_cuerpo').show();
+					$('#cajaBuscarJuego_cuerpo').hide();
+						$('#cajaBuscarJuego_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+						$('#cajaBuscarJuego_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+				}
+				else
+				{
+					$('#cajaRetoAleatorio_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+					$('#cajaRetoAleatorio_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+
+					g_VisibleRetoAleatorio = false;
+					$('#cajaRetoAleatorio_cuerpo').hide();
+				}
+			});
+
+			//---------------------------------------------------
+			$('#cajaBuscarJuego_boton').click(function(){
+				if(!g_VisibleBuscarJuego)
+				{
+					$('#cajaBuscarJuego_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+					$('#cajaBuscarJuego_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+					
+					g_VisibleRetoAleatorio = false;
+					g_VisibleBuscarJuego = true;
+					
+					$('#cajaBuscarJuego_cuerpo').show();
+					$('#cajaRetoAleatorio_cuerpo').hide();
+						$('#cajaRetoAleatorio_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+						$('#cajaRetoAleatorio_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+				}
+				else
+				{
+					$('#cajaBuscarJuego_boton').addClass('vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar');
+					$('#cajaBuscarJuego_boton').removeClass('vDR_cG_cajaBicolor_cabecera_botonRedondoPlegar');
+
+					g_VisibleBuscarJuego = false;
+					$('#cajaBuscarJuego_cuerpo').hide();
+				}
+			});			
+
+			//---------------------------------------------------
+			var ac_configBuscaAmigo = {
+					source: g_gameURL+"ws_getretables.php",
+					select: function(event, ui){
+						$("#txtTextoBusquedaAmigo").val(ui.item.label);
+						$("#idRetado").val(ui.item.idusuario);
+
+						$('#vDR_cG_eC_cajaBuscarEntreAmigo_tableJuegoElegido').show();
+
+						$('#vDR_cG_eC_cBEA_tableJuegoElegido_nombre').html(ui.item.label);
+						if(ui.item.imagenusuario != "")
+							$('#vDR_cG_eC_cBEA_tableJuegoElegido_imagenImg').attr("src", 'https://www.cerebriti.com/uploads/'+ui.item.imagenusuario);
+						else
+							$('#vDR_cG_eC_cBEA_tableJuegoElegido_imagenImg').attr("src", 'https://www.cerebriti.com/img/default_avatar_players.gif');
+					},
+					minLength:2
+				};
+			$("#txtTextoBusquedaAmigo").autocomplete(ac_configBuscaAmigo);
+
+			//---------------------------------------------------
+			var ac_configBuscaJuego = {
+					source: g_gameURL+"ws_getjuegos.php",
+					select: function(event, ui){
+						$("#txtTextoBusquedaJuego").val(ui.item.label);
+						$("#idJuego").val(ui.item.idjuego);
+
+						$('#vDR_cG_eJ_cajaBuscarJuego_tableJuegoElegido').show();
+
+						$('#vDR_cG_eJ_cBJ_tableJuegoElegido_nombre').html(ui.item.label);
+						if(ui.item.imagenjuego != "")
+							$('#vDR_cG_eJ_cBJ_tableJuegoElegido_imagenImg').attr("src", 'https://www.cerebriti.com/uploads/'+ui.item.imagenjuego);
+						else
+							$('#vDR_cG_eJ_cBJ_tableJuegoElegido_imagenImg').attr("src", 'https://www.cerebriti.com/img/neutro_avatar_juegos.gif');
+					},
+					minLength:2
+				};
+			$("#txtTextoBusquedaJuego").autocomplete(ac_configBuscaJuego);			
+
+			//---------------------------------------------------
+			$('input:radio.radioButtonsCategoriasElegir').each(function(){
+		    $(this).click(function(){
+					if($(this).is(':checked')) 
+					{
+		      	$('#aleatorioCategoriaID').val($(this).val());
+		      } 
+		    });
+			});
+
+			//---------------------------------------------------
+			$('#ventanaDialogoReto_botonLanzarReto').click(function(){
+
+				if(!$(this).hasClass('enviando'))
+				{
+					$(this).addClass('enviando');
+					$('#ventanaDialogoReto_botonLanzarReto span').html("Enviando reto...");
+					
+					$('#emailRetado').val($('#txtTextoBusquedaEmail').val());
+					
+					if(g_VisibleBuscarEntreAmigos)
+						$('#emailRetado').val("");
+					else if(g_VisibleBuscarPorEmail)
+						$('#idRetado').val("");
+	
+					/*if(g_VisibleRetoAleatorio)
+						$('#idJuego').val("");
+					else if(g_VisibleBuscarJuego)
+						$('#aleatorioCategoriaID').val("");*/
+	
+					if(!$('#idRetado').val() && !$('#emailRetado').val())
+					{
+						alert("Tienes que elegir un jugador al que retar o bien escribir un email.");
+						return false;
+					}
+	
+					/*if(!$('#idJuego').val() && !$('#aleatorioCategoriaID').val())
+					{
+						alert('Tienes que elegir un juego o bien una categoria.');
+						return false;
+					}*/
+	
+					//$('#formLanzarReto').submit();
+	
+					var dataParams = "wsf="+"109";
+					dataParams += '&idRetado='+$('#idRetado').val();
+					dataParams += '&emailRetado='+$('#emailRetado').val();
+					dataParams += '&idPartida='+$('#idPartida').val();
+					dataParams += '&idJuego='+$('#idJuego').val();
+					dataParams += '&nombreJuego='+$('#nombreJuego').val();
+					dataParams += '&permaJuego='+$('#permaJuego').val();
+					dataParams += '&aleatorioCategoriaID='+$('#aleatorioCategoriaID').val();
+					
+					$.support.cors = true;
+					$.ajax({
+				        url: g_gameURL+"ws_ajax.php",
+				        data: dataParams,
+				        type: "POST",
+				        async: false,
+				        cache: false,
+				        dataType: "json",
+				        success: function(data, textStatus, jqXHR)
+				        {
+				  				$('#ventanaDialogoRetoContainer').hide();
+				  				//$('#fondoDialogo').hide();
+				  				lanzarDialogoFeedback("Reto enviado con &eacute;xito", true);			 
+
+				  				$(this).removeClass('enviando');
+				  				$('#ventanaDialogoReto_botonLanzarReto span').html("Lanzar reto");
+				        },
+				        error: function (data, status, e)
+				        {
+				  				$(this).removeClass('enviando');
+				  				$('#ventanaDialogoReto_botonLanzarReto span').html("Lanzar reto");
+				        },
+				        timeout: 3000
+					});
+				}
+			});
+		});
+	
+	</script>
+	
+	<form id="formLanzarReto" method="post" action="https://www.cerebriti.com/juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad" enctype="multipart/form-data">
+		<input type="hidden" name="f" id="f" value="65">
+		
+		<input type="hidden" name="idRetado" id="idRetado" value="">
+		<input type="hidden" name="emailRetado" id="emailRetado" value="">
+		<input type="hidden" name="idPartida" id="idPartida" value="">
+		<input type="hidden" name="idJuego" id="idJuego" value="">
+		<input type="hidden" name="nombreJuego" id="nombreJuego" value="">
+		<input type="hidden" name="permaJuego" id="permaJuego" value="">
+		<input type="hidden" name="aleatorioCategoriaID" id="aleatorioCategoriaID" value="">
+	</form>
+	
+	
+	<div id="ventanaDialogoRetoContainer">
+		<div id="ventanaDialogoReto1" class="ventanaDialogoReto">
+		
+			<div id="ventanaDialogoReto_lineaBotonCerrar">
+				<div id="ventanaDialogoReto_botonCerrar"></div>
+			</div>
+			
+			<div id="ventanaDialogoReto_lineaTitulo">Has elegido retar a Carlos.</div>
+			<div id="ventanaDialogoReto_lineaSubTitulo">Para comenzar este reto de mentes priviligedias, elige el tipo de reto:</div>
+			
+			
+			<div id="ventanaDialogoReto_containerGris_elegirContrario">
+			
+				<div id="vDR_cG_elegirContrario_tituloCentrado">¿A quién quieres retar?</div>
+			
+				<div id="vDR_cG_elegirJuego_cajaBuscarEntreAmigos" class="ventanaDialogoReto_containerGris_containerCajaBicolor">
+					<div class="vDR_cG_cajaBicolor_cabecera">
+						<!-- <div id="cajaBuscarEntreAmigos_boton" class="vDR_cG_cajaBicolor_cabecera_botonRedondo vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar"></div> -->
+						<div class="vDR_cG_cajaBicolor_cabecera_subtitulo2"><div><div>Busca a tu contrincante entre los jugadores de Cerebriti:</div></div></div>
+					</div>
+					<div id="cajaBuscarEntreAmigos_cuerpo" class="vDR_cG_cajaBicolor_cuerpo">
+					
+						<div id="vDR_cG_eC_cajaBuscarEntreAmigo_containerBusquedaAmigo">
+							<input type="text" name="txtTextoBusquedaAmigo" id="txtTextoBusquedaAmigo" size="39" placeholder="Introduce el nombre" value="" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+						</div>
+						<div id="vDR_cG_eC_cajaBuscarEntreAmigo_botonBusquedaJuego"></div>
+						
+						<div id="vDR_cG_eC_cajaBuscarEntreAmigo_separador"></div>
+						
+						<table id="vDR_cG_eC_cajaBuscarEntreAmigo_tableJuegoElegido" style="display: none;">
+							<tbody><tr>
+								<td id="vDR_cG_eC_cBEA_tableJuegoElegido_label">Has elegido retar a:</td>
+								<td id="vDR_cG_eC_cBEA_tableJuegoElegido_imagen"><img id="vDR_cG_eC_cBEA_tableJuegoElegido_imagenImg" src="https://www.cerebriti.com/juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad"></td>
+								<td id="vDR_cG_eC_cBEA_tableJuegoElegido_nombre">Raulius</td>
+							</tr>
+						</tbody></table>
+					
+					</div>
+				</div>	
+				
+				<!-- 
+				<div id="vDR_cG_elegirJuego_cajaBuscarPorEmail" class="ventanaDialogoReto_containerGris_containerCajaBicolor">
+					<div class="vDR_cG_cajaBicolor_cabecera vDR_cG_cajaBicolor_cabeceraCerrada">
+						<div id="cajaBuscarPorEmail_boton" class="vDR_cG_cajaBicolor_cabecera_botonRedondo vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar"></div>
+						<div class="vDR_cG_cajaBicolor_cabecera_subtitulo2"><div><div>O enviale el reto por Email:</div></div></div>
+					</div>
+					<div id="cajaBuscarPorEmail_cuerpo" class="vDR_cG_cajaBicolor_cuerpo">
+					
+						<div id="vDR_cG_eC_cajaBuscarEntreAmigo_containerMandarEmail">
+							<input type="text" name="txtTextoBusquedaEmail" id="txtTextoBusquedaEmail" size="39" placeholder="Introduce el e-mail" value="" />
+						</div>				
+					
+					</div>
+				</div>
+				 -->		
+			
+			</div>
+			
+			
+			<div id="ventanaDialogoReto_containerGris_elegirJuego">
+			
+				<div id="vDR_cG_elegirJuego_cajaRetoAleatorio" class="ventanaDialogoReto_containerGris_containerCajaBicolor">
+					<div class="vDR_cG_cajaBicolor_cabecera vDR_cG_cajaBicolor_cabeceraCerrada">
+						<div id="cajaRetoAleatorio_boton" class="vDR_cG_cajaBicolor_cabecera_botonRedondo vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar"></div>
+						<div class="vDR_cG_cajaBicolor_cabecera_titulo">Reto aleatorio</div>
+						<div class="vDR_cG_cajaBicolor_cabecera_subtitulo">Se elegirá un juego al azar dentro de la categoría que elijas:</div>
+					</div>
+					<div id="cajaRetoAleatorio_cuerpo" class="vDR_cG_cajaBicolor_cuerpo" style="display: none;">
+					
+						<div id="vDR_cG_elegirJuego_cajaCategorias">
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="1"> Arte							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="2"> Deportes							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="3"> Literatura							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="4"> Ciencias							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="5"> Geografía							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="6"> Música							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="7"> Cine							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="8"> Historia							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="9"> Matemáticas							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="10"> Televisión							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="11"> Idiomas							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="12"> Tecnología							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="13"> Ocio							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="14"> Marcas							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="15"> Motor							</div>
+				
+							<div class="vDR_cG_elegirJuego_categoria_radio_container">
+								<input type="radio" class="radioButtonsCategoriasElegir" name="step3_categoria" value="16"> Lengua							</div>
+							
+							<div class="clear_both_div"></div>
+						</div>				
+						<div class="clear_both_div"></div>					
+					
+					</div>
+				</div>
+				
+				<div id="vDR_cG_elegirJuego_cajaBuscarJuego" class="ventanaDialogoReto_containerGris_containerCajaBicolor">
+					<div class="vDR_cG_cajaBicolor_cabecera vDR_cG_cajaBicolor_cabeceraCerrada">
+						<div id="cajaBuscarJuego_boton" class="vDR_cG_cajaBicolor_cabecera_botonRedondo vDR_cG_cajaBicolor_cabecera_botonRedondoDesplegar"></div>
+						<div class="vDR_cG_cajaBicolor_cabecera_titulo">Reto a un juego concreto</div>
+						<div class="vDR_cG_cajaBicolor_cabecera_subtitulo">Encuentra el juego al que quieres retar a tu oponente en nuestro buscador:</div>
+					</div>
+					<div id="cajaBuscarJuego_cuerpo" class="vDR_cG_cajaBicolor_cuerpo" style="display: none;">
+					
+						<div id="vDR_cG_elegirJuego_containerBusquedaJuego">
+							<input type="text" name="txtTextoBusquedaJuego" id="txtTextoBusquedaJuego" size="39" placeholder="Introduce una palabra clave" value="" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+						</div>
+						<div id="vDR_cG_elegirJuego_botonBusquedaJuego"></div>
+						
+						<div id="vDR_cG_eJ_cajaBuscarJuego_separador"></div>
+						
+						<table id="vDR_cG_eJ_cajaBuscarJuego_tableJuegoElegido" style="display: none;">
+							<tbody><tr>
+								<td id="vDR_cG_eJ_cBJ_tableJuegoElegido_label">Has elegido:</td>
+								<td id="vDR_cG_eJ_cBJ_tableJuegoElegido_imagen"><img id="vDR_cG_eJ_cBJ_tableJuegoElegido_imagenImg" src="https://www.cerebriti.com/juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad"></td>
+								<td id="vDR_cG_eJ_cBJ_tableJuegoElegido_nombre">Bandas heavies de los a�os 80</td>
+							</tr>
+						</tbody></table>			
+					
+					</div>
+				</div>			
+			
+			</div>
+			
+			<div id="ventanaDialogoReto_containerBotonLanzar">
+				<div id="ventanaDialogoReto_botonLanzarReto"><span>Lanzar reto</span> <img src="./Actividad3_files/flecha_blanca_9x17.gif"></div>
+			</div>
+			
+			<div id="ventanaDialogoReto_lineaTitulo">¿Cómo funcionan los retos?</div>
+			<div id="ventanaDialogoReto_bloqueInstruccionesRetos">
+			</div>
+		
+			<div class="clear_both_div"></div>
+		</div>
+	</div>	
+<!-- Base Render: PreContainer -->	
+
+    <div id="contenedorGeneral">
+      <div id="skyscrapperIzquierdo" style="margin-right:10px;margin-top:11px;">
+<script async="" src="./Actividad3_files/f(2).txt"></script>
+<!-- SKY Juegos Izquierdo -->
+<ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-4454931198923716" data-ad-slot="9674483694" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent;"><iframe width="120" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:120px;height:600px;" src="./Actividad3_files/saved_resource.html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	        
+      </div>
+	    <div id="container">
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Actividad3_files/xd_arbiter.html" style="border: none;"></iframe></div><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1&appId=371416059610195";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+		
+
+<div id="mainBodyGames">
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$('#barraDeHerramientasBotonBusquedas').click(function(){
+				if($('#txtTextoBusquedaBarraHerramientas').val())
+				{
+					window.location = "https://www.cerebriti.com/buscar/"+$('#txtTextoBusquedaBarraHerramientas').val()+"/";
+				}
+			});
+
+			$('#botonHazBusquedasMb').click(function(){
+				if($('#txtTextoBusquedaBarraHerramientas').val())
+				{
+					window.location = "https://www.cerebriti.com/buscar/"+$('#txtTextoBusquedaBarraHerramientas').val()+"/";
+				}
+			});			
+
+			$('#txtTextoBusquedaBarraHerramientas').keypress(function(e){
+			  if(e.which == 13) 
+			  {
+					if($(this).val())
+					{
+						window.location = "https://www.cerebriti.com/buscar/"+$(this).val()+"/";
+					}
+			  }
+			});
+
+			/*$('#barraDeHerramientasBotonAleatorio').click(function(){
+				window.location = "https://www.cerebriti.com/juegos-de-ocio/las-emociones1/";
+			});*/
+
+			$('#barraDeHerramientasBotonEligeCategoria').click(function(){
+				/*var options = {};
+				$('#menuDesplegableElegirCategoria').toggle('blind', options, 500);*/
+				$('#menuDesplegableElegirCategoria').show();
+				$('#menuDesplegableElegirTematica').hide();
+			});
+			$('#menuDesplegableElegirCategoriaBotonCerrar').click(function(){
+				/*var options = {};
+				$('#menuDesplegableElegirCategoria').toggle('blind', options, 500);*/
+				$('#menuDesplegableElegirCategoria').hide();
+			});
+
+			$('#barraDeHerramientasBotonEligeTematica').click(function(){
+				/*var options = {};
+				$('#menuDesplegableElegirTematica').toggle('blind', options, 500);*/
+				$('#menuDesplegableElegirCategoria').hide();
+				$('#menuDesplegableElegirTematica').show();
+			});
+			$('#menuDesplegableElegirTematicaBotonCerrar').click(function(){
+				/*var options = {};
+				$('#menuDesplegableElegirTematica').toggle('blind', options, 500);*/
+				$('#menuDesplegableElegirTematica').hide();
+			});			
+	});
+		</script>
+
+<div id="infoJuego" class="background_categoria12">
+	<div id="tituloImagenJuego">
+		<div id="containerImagenJuego">
+		<img id="imagenJuegoImg" src="./Actividad3_files/da732662d870e7e73420bac1b2abc31b.png">		</div>
+		<h1 id="tituloJuego">Manejo de amenazas: Ciberseguridad</h1> 
+		<span id="descripcionJuego">Une correctamente</span>
+		
+		<div id="lineaInGameCreadoPor" class="lineaInGameDatosSecundarios">
+			<img class="flecha" src="./Actividad3_files/mini_flecha_gt.png"> 
+			<span class="etiqueta">Creado por:</span>
+			<div id="lineaInGameCreatorImgContainer">
+				<img src="./Actividad3_files/default_avatar_players.gif">
+			</div>
+			<a href="https://www.cerebriti.com/usuario/nelson-vasquez1/resumen/">
+				<span class="etiquetaRespuesta">nelson </span>
+			</a>
+		</div>		
+		 
+	</div>
+	<a href="http://landing.cerebriti.com/?utm_source=Cerebriti%20juegos&amp;utm_medium=Banner&amp;utm_campaign=Banner%20Juegos" target="_blank"><div id="adsTituloJuego"></div></a>
+	
+	<!-- 
+	<div id="datosSecundariosJuego">
+		<div id="lineaInGameCreadoPor" class="lineaInGameDatosSecundarios">
+			<img class="flecha" src="https://www.cerebriti.com/img/mini_flecha_gt.png" /> 
+			<span class="etiqueta">Creado por:</span>
+			<div id="lineaInGameCreatorImgContainer">
+				<img src="https://www.cerebriti.com/img/default_avatar_players.gif" />
+			</div>
+			<a href="/usuario/nelson-vasquez1/resumen/">
+			<span class="etiquetaRespuesta">nelson </span> </a>
+		</div>
+		<div id="lineaInGameCategoria" class="lineaInGameDatosSecundarios">
+			<img class="flecha"
+				src="https://www.cerebriti.com/img/mini_flecha_gt.png" /> <span
+				class="etiqueta">Categor&iacute;a:</span>
+			<div id="lineaInGameFlechaCategoria"
+				class="flechaCategoria12"></div>
+			<a
+				href="/listado/juegos-mas-recientes/filtrado-por-categoria/tecnologia/"><span
+				class="etiquetaRespuesta">Tecnolog&iacute;a			</span> </a>
+		</div>
+		<div id="lineaInGameTipoJuego" class="lineaInGameDatosSecundarios">
+			<img class="flecha"
+				src="https://www.cerebriti.com/img/mini_flecha_gt.png" /> <span
+				class="etiqueta">Tipo de juego:</span> <a
+				href="/listado/juegos-mas-recientes/filtrado-por-tipo-juego/E/resumen/"><img
+				class="logoTipoJuego" src="https://www.cerebriti.com/img/icono26_juego_tipoE.png" /> </a>
+		</div>
+	</div>
+	 -->
+</div>
+<!-- infoJuego -->
+			
+
+	
+	<div id="barraDeJuego" class="barraDeJuegoTipo3">
+
+	<div id="bocadilloInformacionTipo1"></div>
+
+	<div id="barraDeJuegoTipoResultado_containerInfo">
+		<span id="barraDeJuego_labelResultado">TU RESULTADO:</span>
+
+		<div id="barraDeJuego_marcadorFinalScores">
+			<div id="bDJ_marcadorFinalScores_labelPuntos">Puntos:</div>
+			<span id="barraDeJuego_marcadorFinal_cifraPuntos"></span>
+			<div id="bDJ_marcadorFinalScores_labelMedia">Nota media:</div>
+			<span id="barraDeJuego_marcadorFinal_cifraMedia"></span>
+		</div>
+		
+		<script type="text/javascript">	
+			$(document).ready(function(){
+				g_retar_NombreJuego = "Manejo de amenazas: Ciberseguridad";
+				g_retar_PermaJuego = "juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad";
+				g_retar_idJuego = "46250";
+				//g_retar_idPartida = -1;
+
+				
+						
+						$('#botonRetarAmigoBarra').click(function(){
+
+						
+
+							$.ajax({
+						    url: g_gameURL+"ws_ajax.php",
+						    data: 'wsf=117&idjuego=46250',
+						    type: "POST",
+						    async: true,
+						    cache: false,
+						    dataType: "json",
+						    error: function(jqXHR, textStatus, errorThrown)
+						    {
+						    	// TODO: mostrar mensaje de Error      	
+						    },
+						    success: function(data, textStatus, jqXHR)
+						    {
+						    },
+						    timeout: 15000
+							});								
+							
+							$('#fondoDialogo').show();
+							$('#ventanaDialogoLoginRetar').show();					
+						});
+				
+			});
+		</script>
+
+		<div id="botonRetarAmigoBarra">
+			<div id="botonRetarAmigoBarra_container" class="background_categoria12">
+				<span id="botonRetarAmigoBarra_text">Reta a un amigo <img src="./Actividad3_files/flecha_blanca.png"> </span>
+			</div>
+		</div>
+					
+		<script type="text/javascript">	
+			$(document).ready(function(){
+				$('#bDJ_marcadorFinalScores_iconoAgain').click(function(){
+					
+					window.location = 'https://www.cerebriti.com/juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad/';
+											
+				});
+				$('#bDJ_marcadorFinalScores_iconoHome').click(function(){
+					window.location = 'https://www.cerebriti.com/';						
+				});				
+			});
+		</script>		
+		
+		
+		<div id="bDJ_marcadorFinalScores_iconoAgain"></div>
+		
+		<div id="bDJ_marcadorFinalScores_separadorIconos"></div>
+		<div id="bDJ_marcadorFinalScores_iconoHome"></div>
+			
+
+	</div>
+	
+		<script type="text/javascript">	
+			$(document).ready(function(){
+				$('#containerMarcadorHelp').hover(function () {
+						$('#bocadilloInformacionTipo1').show();
+					},
+					function () {
+						$('#bocadilloInformacionTipo1').hide();
+					}
+				);
+			});
+		</script>	
+	
+		<div id="mobile_containerMarcadoresIngame">
+		<div id="containerMarcadorInGameAcertadas">
+			<span id="marcadorInGameAcertadas">00/14			</span>
+		</div>
+		<div id="containerMarcadorInGameTiempo">
+			<span id="marcadorInGameTiempo">10:00 </span>
+		</div>
+	</div>
+	<div id="mobile_containerExplicacionIngame">
+		<div id="containerMarcadorTopHelp3">
+			<div>
+			Haz click solo sobre la respuesta correcta.			</div>
+		</div>	
+	</div>	
+	</div>
+	<div id="containerJuego">
+
+			
+			
+			
+			
+<!-- PERSIANA -->
+<div id="contenedorBotonJugarPersianaJuego">
+	<div id="botonJugarPersianaJuego"></div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#secrePersianaJuego_login').click(function(){
+		$('#fondoDialogo').show();
+		$('#ventanaDialogoLogin').show();
+	});
+	/*$('#secrePersianaJuego_register').click(function(){
+		$('#fondoDialogo').show();
+		$('#ventanaDialogoRegister').show();
+	});*/	
+});
+</script>
+
+<div id="containerSecrePersianaJuego">
+	<div id="secrePersianaJuego">
+		<span id="secrePersianaJuego_login">Inicia sesión</span>
+		<a href="https://www.cerebriti.com/usuario/registro/"><span id="secrePersianaJuego_register">Regístrate</span></a>
+	</div>
+</div>
+<div id="logoPersianaJuego"></div>
+<div id="persianaJuego"><div id="lamasPersiana"></div></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+});
+</script>
+
+
+	<div id="persiana-cuestionario" style="display: block;">
+	
+		<div id="percue-paso1" class="percue-paso">
+			<div class="percue-step">1/3</div>
+			<div class="percue-text">Estamos mejorando nuestra web ¿nos ayudas?</div>
+			<div class="percue-title">Estás jugando a Cerebriti para:</div>
+			<div id="percue-respuestas1" class="percue-respuestas">
+				<div class="percue-respuesta" data-respidx="2" data-respstep="1">Enseñar (soy profe / padre)</div>
+				<div class="percue-respuesta" data-respidx="1" data-respstep="1">Aprender (soy alumno/a)</div>
+				<div class="percue-respuesta" data-respidx="3" data-respstep="1">Culturizarme</div>
+				<div class="percue-respuesta" data-respidx="4" data-respstep="1">Para pasar el rato</div>
+			</div>	
+		</div>
+		
+		<div id="percue-paso2a" class="percue-paso">
+			<div class="percue-step">2/3</div>
+			<div class="percue-title">¿Qué estás estudiando?</div>
+			<div id="percue-respuestas2a" class="percue-respuestas">
+				<div class="percue-respuesta" data-respidx="1" data-respstep="2a">Primaria</div>
+				<div class="percue-respuesta" data-respidx="2" data-respstep="2a">Secundaria</div>
+				<div class="percue-respuesta" data-respidx="3" data-respstep="2a">Bachillerato</div>
+				<div class="percue-respuesta" data-respidx="4" data-respstep="2a">FP</div>
+				<div class="percue-respuesta" data-respidx="5" data-respstep="2a">Universidad</div>
+				<div class="percue-respuesta" data-respidx="6" data-respstep="2a">Oposiciones</div>
+				<div class="percue-respuesta" data-respidx="7" data-respstep="2a">Formación para empleados</div>
+			</div>
+		</div>
+		
+		<div id="percue-paso2b" class="percue-paso">
+			<div class="percue-step">2/3</div>
+			<div class="percue-title">¿Qué enseñas?</div>
+			<div id="percue-respuestas2b" class="percue-respuestas">
+				<div class="percue-respuesta" data-respidx="1" data-respstep="2b">Primaria</div>
+				<div class="percue-respuesta" data-respidx="2" data-respstep="2b">Secundaria</div>
+				<div class="percue-respuesta" data-respidx="3" data-respstep="2b">Bachillerato</div>
+				<div class="percue-respuesta" data-respidx="4" data-respstep="2b">FP</div>
+				<div class="percue-respuesta" data-respidx="5" data-respstep="2b">Universidad</div>
+				<div class="percue-respuesta" data-respidx="6" data-respstep="2b">Oposiciones</div>
+				<div class="percue-respuesta" data-respidx="7" data-respstep="2b">Formación para empleados</div>
+				<div class="percue-respuesta" data-respidx="8" data-respstep="2b">Soy padre / madre</div>
+			</div>
+		</div>
+		
+		<div id="percue-paso2c" class="percue-paso">
+			<div class="percue-step">2/3</div>
+			<div class="percue-title">¿Cuáles son tus juegos favoritos?</div>
+			<div id="percue-respuestas2c" class="percue-respuestas">
+				<div class="percue-respuesta" data-respidx="1" data-respstep="2c">Música</div>
+				<div class="percue-respuesta" data-respidx="2" data-respstep="2c">Cine</div>
+				<div class="percue-respuesta" data-respidx="3" data-respstep="2c">Deportes</div>
+				<div class="percue-respuesta" data-respidx="4" data-respstep="2c">Marcas</div>
+				<div class="percue-respuesta" data-respidx="5" data-respstep="2c">Geografía</div>
+				<div class="percue-respuesta" data-respidx="6" data-respstep="2c">Ciencias</div>
+				<div class="percue-respuesta" data-respidx="7" data-respstep="2c">Matemáticas</div>
+				<div class="percue-respuesta" data-respidx="8" data-respstep="2c">Lengua</div>
+				<div class="percue-respuesta" data-respidx="9" data-respstep="2c">Literatura</div>
+				<div class="percue-respuesta" data-respidx="10" data-respstep="2c">Idiomas</div>
+				<div class="percue-respuesta" data-respidx="11" data-respstep="2c">Historia</div>
+				<div class="percue-respuesta" data-respidx="12" data-respstep="2c">Arte</div>
+				<div class="percue-respuesta" data-respidx="13" data-respstep="2c">TV</div>
+				<div class="percue-respuesta" data-respidx="14" data-respstep="2c">Tecnología</div>
+				<div class="percue-respuesta" data-respidx="15" data-respstep="2c">Motor</div>	
+			</div>
+		</div>
+		
+		<div id="percue-paso2d" class="percue-paso">
+			<div class="percue-step">2/3</div>
+			<div class="percue-title">¿Cuáles son tus juegos favoritos?</div>
+			<div id="percue-respuestas2d" class="percue-respuestas">
+				<div class="percue-respuesta" data-respidx="1" data-respstep="2d">Música</div>
+				<div class="percue-respuesta" data-respidx="2" data-respstep="2d">Cine</div>
+				<div class="percue-respuesta" data-respidx="3" data-respstep="2d">Deportes</div>
+				<div class="percue-respuesta" data-respidx="4" data-respstep="2d">Marcas</div>
+				<div class="percue-respuesta" data-respidx="5" data-respstep="2d">Geografía</div>
+				<div class="percue-respuesta" data-respidx="6" data-respstep="2d">Ciencias</div>
+				<div class="percue-respuesta" data-respidx="7" data-respstep="2d">Matemáticas</div>
+				<div class="percue-respuesta" data-respidx="8" data-respstep="2d">Lengua</div>
+				<div class="percue-respuesta" data-respidx="9" data-respstep="2d">Literatura</div>
+				<div class="percue-respuesta" data-respidx="10" data-respstep="2d">Idiomas</div>
+				<div class="percue-respuesta" data-respidx="11" data-respstep="2d">Historia</div>
+				<div class="percue-respuesta" data-respidx="12" data-respstep="2d">Arte</div>
+				<div class="percue-respuesta" data-respidx="13" data-respstep="2d">TV</div>
+				<div class="percue-respuesta" data-respidx="14" data-respstep="2d">Tecnología</div>
+				<div class="percue-respuesta" data-respidx="15" data-respstep="2d">Motor</div>	
+			</div>
+		</div>		
+		
+		<div id="percue-paso3a" class="percue-paso">
+			<div class="percue-step">3/3</div>
+			<div class="percue-title">¿Cómo has llegado hasta aquí?</div>
+			<div id="percue-respuestas3a" class="percue-respuestas">
+				<div class="percue-respuesta" data-respidx="1" data-respstep="3a">Me lo recomendó mi profesor</div>
+				<div class="percue-respuesta" data-respidx="2" data-respstep="3a">Me lo recomendó un amigo</div>
+				<div class="percue-respuesta" data-respidx="3" data-respstep="3a">Buscando en Google</div>
+				<div class="percue-respuesta" data-respidx="4" data-respstep="3a">Por redes sociales</div>
+				<div class="percue-respuesta" data-respidx="5" data-respstep="3a">Por un enlace en otra web/blog</div>
+				<div class="percue-respuesta" data-respidx="6" data-respstep="3a">Otros</div>
+			</div>
+		</div>
+		
+		<div id="percue-paso3b" class="percue-paso">
+			<div class="percue-step">3/3</div>
+			<div id="percue-paso3b-title1" class="percue-title">Muy pronto lanzaremos una App de juegos para Primaria.</div>
+			<div id="percue-paso3b-title2" class="percue-title">Muy pronto lanzaremos una App de juegos para Secundaria.</div>
+			<div id="percue-paso3b-title3" class="percue-title">Muy pronto lanzaremos una App de juegos para Bachillerato.</div> 
+			<div id="percue-paso3b-title4" class="percue-title">Muy pronto lanzaremos una App de juegos para FP.</div>
+			<div id="percue-paso3b-title5" class="percue-title">Muy pronto lanzaremos una App de juegos para universitarios.</div>
+			<div id="percue-paso3b-title6" class="percue-title">Muy pronto lanzaremos una App de juegos para opositores.</div> 
+			<div id="percue-paso3b-title7" class="percue-title">Muy pronto lanzaremos una App de juegos para formadores.</div>
+			<div id="percue-paso3b-title8" class="percue-title">Vamos a lanzar una App para ayudar a tus hijos con los deberes.</div> 			
+			<div class="percue-text">¡Apúntate y te avisaremos cuando esté lista!</div>
+			<div id="percue-respuestas3b" class="percue-respuestas percue-respuestas-columna">
+				<div class="percue-respuesta-input">
+					<input type="text" name="txtEmail3b" id="txtEmail3b" placeholder="Tu correo electrónico">
+					<div class="percue-respuesta percue-botonmail" data-respidx="1" data-respstep="3b">¡Me apunto!</div>
+				</div>
+				<div class="percue-respuesta-check">
+					<input type="checkbox" name="chkAcepto" id="chkAcepto3b" value="acepto"> Sí, quiero recibir un e-mail cuando la App esté lista.
+				</div>				
+				<div class="percue-respuesta percue-mini" data-respidx="2" data-respstep="3b">No, gracias</div>
+			</div>
+			<div class="percue-avisolegal">Los datos personales facilitados serán tratados exclusivamente por Cerebriti Technologies SL y solo los utilizaremos para enviarte información sobre los nuevos productos y/o servicios de Cerebriti. No compartimos tu información con nadie (ni empresas de marketing ni anunciantes) ni vendemos ni alquilamos tu información a terceros.<br>
+Podrás ejercer tus derechos de acceso, rectificación, limitación y suprimir los datos en cualquier momento escribiéndonos en <a href="mailto:info@cerebriti.com" target="_blank">info@cerebriti.com</a><br>
+Puedes consultar la información adicional y detallada sobre Protección de Datos en nuestra <a href="https://www.cerebriti.com/informacion/aviso-legal/" target="_blank">política de privacidad</a>.
+			</div>
+		</div>
+		
+		<div id="percue-paso3c" class="percue-paso">
+			<div class="percue-step">3/3</div>
+			<div class="percue-title2">Vamos a lanzar una App de juegos educativos para niños de 8 a 15 años.</div>
+			<div class="percue-text2">¡Apúntate y te avisaremos cuando esté lista!</div> 			
+			<div id="percue-respuestas3c" class="percue-respuestas percue-respuestas-columna">
+				<div class="percue-respuesta-input">
+					<input type="text" name="txtEmail3c" id="txtEmail3c" placeholder="Tu correo electrónico">
+					<div class="percue-respuesta percue-botonmail" data-respidx="1" data-respstep="3c">¡Me apunto!</div>
+				</div>
+				<div class="percue-respuesta-check">
+					<input type="checkbox" name="chkAcepto" id="chkAcepto3c" value="acepto"> Sí, quiero recibir un e-mail cuando la App esté lista.
+				</div>
+				<div class="percue-respuesta percue-mini" data-respidx="2" data-respstep="3c">No, gracias</div>
+			</div>
+			<div class="percue-avisolegal">Los datos personales facilitados serán tratados exclusivamente por Cerebriti Technologies SL y solo los utilizaremos para enviarte información sobre los nuevos productos y/o servicios de Cerebriti. No compartimos tu información con nadie (ni empresas de marketing ni anunciantes) ni vendemos ni alquilamos tu información a terceros.<br>
+Podrás ejercer tus derechos de acceso, rectificación, limitación y suprimir los datos en cualquier momento escribiéndonos en <a href="mailto:info@cerebriti.com" target="_blank">info@cerebriti.com</a><br>
+Puedes consultar la información adicional y detallada sobre Protección de Datos en nuestra <a href="https://www.cerebriti.com/informacion/aviso-legal/" target="_blank">política de privacidad</a>.
+			</div>
+		</div>
+		
+		<div id="percue-paso3d" class="percue-paso">
+			<div class="percue-step">3/3</div>
+			<div class="percue-title2">Vamos a lanzar una App para convertir los deberes en juegos.</div>
+			<div class="percue-text2">¡Apúntate y te avisaremos cuando esté lista!</div> 			
+			<div id="percue-respuestas3d" class="percue-respuestas percue-respuestas-columna">
+				<div class="percue-respuesta-input">
+					<input type="text" name="txtEmail3c" id="txtEmail3d" placeholder="Tu correo electrónico">
+					<div class="percue-respuesta percue-botonmail" data-respidx="1" data-respstep="3d">¡Me apunto!</div>
+				</div>
+				<div class="percue-respuesta-check">
+					<input type="checkbox" name="chkAcepto" id="chkAcepto3d" value="acepto"> Sí, quiero recibir un e-mail cuando la App esté lista.
+				</div>
+				<div class="percue-respuesta percue-mini" data-respidx="2" data-respstep="3d">No, gracias</div>
+			</div>
+			<div class="percue-avisolegal">Los datos personales facilitados serán tratados exclusivamente por Cerebriti Technologies SL y solo los utilizaremos para enviarte información sobre los nuevos productos y/o servicios de Cerebriti. No compartimos tu información con nadie (ni empresas de marketing ni anunciantes) ni vendemos ni alquilamos tu información a terceros.<br>
+Podrás ejercer tus derechos de acceso, rectificación, limitación y suprimir los datos en cualquier momento escribiéndonos en <a href="mailto:info@cerebriti.com" target="_blank">info@cerebriti.com</a><br>
+Puedes consultar la información adicional y detallada sobre Protección de Datos en nuestra <a href="https://www.cerebriti.com/informacion/aviso-legal/" target="_blank">política de privacidad</a>.
+			</div>
+		</div>		
+		
+		<div id="percue-paso4" class="percue-paso">
+			<div class="percue-title2">¡Muchas gracias!</div>
+			<div id="percue-respuestas4" class="percue-respuestas">
+				<div class="percue-respuesta" data-respidx="1" data-respstep="4">Seguir jugando</div>
+			</div>
+		</div>
+				
+	</div>
+	
+	<script type="text/javascript">
+	var g_resultadosEncuesta = {
+			'respuesta1': -1,
+			'respuesta2': -1,
+			'respuesta3': "",
+			'pais': "",
+			'cat': "tecnologia"
+	};
+
+	var g_isMobile = false; //initiate as false
+	// device detection
+	if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+	    || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) 
+	{ 
+	    g_isMobile = true;
+	}	
+
+	var CookieMng = {
+			set: function(name,value,days) {
+				if (days) {
+					var date = new Date();
+					date.setTime(date.getTime()+(days*24*60*60*1000));
+					var expires = "; expires="+date.toGMTString();
+				}
+				else var expires = "";
+				document.cookie = name+"="+value+expires+"; path=/";
+			},
+			read: function(name) {
+				var nameEQ = name + "=";
+				var ca = document.cookie.split(';');
+				for(var i=0;i < ca.length;i++) {
+					var c = ca[i];
+					while (c.charAt(0)==' ') {
+						c = c.substring(1,c.length);
+					}
+					if (c.indexOf(nameEQ) === 0) {
+						return c.substring(nameEQ.length,c.length);
+					}
+				}
+				return null;
+			},
+			erase: function(name) {
+				this.set(name,"",-1);
+			},
+			exists: function(name) {
+				return (this.read(name) !== null);
+			}
+		};	
+	
+	$(document).ready(function(){
+
+		/*var requestUrl = "http://ip-api.com/json";
+		$.ajax({
+		  url: requestUrl,
+		  type: 'GET',
+		  success: function(json)
+		  {
+		    console.log("My country is: " + json.country);
+		    g_resultadosEncuesta.pais = json.country;
+		  },
+		  error: function(err)
+		  {
+		    console.log("Request failed, error= " + err);
+		  }
+		});*/
+
+		if(window.sessionStorage)
+		{
+			if(!window.sessionStorage.getItem("cerebriti_playedtimes"))
+			{
+				window.sessionStorage.setItem("cerebriti_playedtimes", 1);
+			}
+			else
+			{
+				if(!window.sessionStorage.getItem("cerebriti_estadcompl") && !CookieMng.exists("cerebriti_estadcompl"))
+				{
+					$('#persiana-cuestionario').show();
+				}
+				else
+				{
+				}
+			}
+		}
+		
+		/*if(window.sessionStorage && !window.sessionStorage.getItem("cerebriti_playedtimes"))
+		{
+			$('#persiana-cuestionario').hide();
+			window.sessionStorage.setItem("cerebriti_playedtimes", 1);
+		}
+		if(window.sessionStorage && window.sessionStorage.getItem("cerebriti_estadcompl"))
+		{
+			var bEstadisticaCompletada = window.sessionStorage.getItem("cerebriti_estadcompl");
+			if(bEstadisticaCompletada)
+				$('#persiana-cuestionario').hide();
+		}
+		if(CookieMng.exists("cerebriti_estadcompl"))
+			$('#persiana-cuestionario').hide();*/
+		
+		$('.percue-respuesta').on('click', function(){
+			var respStep = $(this).data('respstep');
+			var respIdx = $(this).data('respidx');
+			
+			if(respStep == '1')
+			{
+				g_resultadosEncuesta.respuesta1 = respIdx;
+				$('#percue-paso'+respStep).hide();
+				if(respIdx == 1)
+					$('#percue-paso2a').show();
+				else if(respIdx == 2)
+					$('#percue-paso2b').show();
+				else if(respIdx == 3)
+					$('#percue-paso2c').show();
+				else if(respIdx == 4)
+					$('#percue-paso2d').show();
+			}
+			else if(respStep == '2a')
+			{
+				g_resultadosEncuesta.respuesta2 = respIdx;
+				$('#percue-paso2a').hide();
+				$('#percue-paso3a').show();
+			}
+			else if(respStep == '2b')
+			{
+				g_resultadosEncuesta.respuesta2 = respIdx;
+				$('#percue-paso2b').hide();
+				$('#percue-paso3b .percue-title').hide();
+				$('#percue-paso3b #percue-paso3b-title'+respIdx).show();
+				$('#percue-paso3b').show();
+			}
+			else if(respStep == '2c')
+			{
+				g_resultadosEncuesta.respuesta2 = respIdx;
+				$('#percue-paso2c').hide();
+				$('#percue-paso3c').show();				
+			}
+			else if(respStep == '2d')
+			{
+				g_resultadosEncuesta.respuesta2 = respIdx;
+				$('#percue-paso2d').hide();
+				$('#percue-paso3d').show();				
+			}			
+			else if(respStep == '3a')
+			{
+				g_resultadosEncuesta.respuesta3 = respIdx;
+
+				$.ajax({
+				    url: g_gameURL+"ws_ajax.php",
+				    data: 'wsf=118&r1='+g_resultadosEncuesta.respuesta1+'&r2='+g_resultadosEncuesta.respuesta2+'&r3='+g_resultadosEncuesta.respuesta3+'&pais='+g_resultadosEncuesta.pais+'&ismobile='+(g_isMobile ? '1':'0')+'&cat='+g_resultadosEncuesta.cat,
+				    type: "POST",
+				    async: true,
+				    cache: false,
+				    dataType: "json",
+				    error: function(jqXHR, textStatus, errorThrown)
+				    {				
+        				$('#percue-paso3a').hide();
+        				$('#percue-paso4').show();
+				    },
+				    success: function(data, textStatus, jqXHR)
+				    {
+						$('#percue-paso3a').hide();
+						$('#percue-paso4').show();						
+				    },
+				    timeout: 15000
+				});
+
+				if(window.sessionStorage)
+					window.sessionStorage.setItem("cerebriti_estadcompl", true);	
+				CookieMng.set("cerebriti_estadcompl", true, 365);		
+			}
+			else if(respStep == '3b')
+			{
+				if(respIdx == 1)
+				{
+					if($('#txtEmail3b').val().length < 1)
+					{
+						alert('Tienes que introducir un email para que te podamos informar');
+					}
+					else if(!$('#chkAcepto3b').prop('checked'))
+					{
+						alert('Tienes que aceptar el check');
+					}
+					else
+					{
+						g_resultadosEncuesta.respuesta3 = $('#txtEmail3b').val();
+
+						$.ajax({
+						    url: g_gameURL+"ws_ajax.php",
+						    data: 'wsf=118&r1='+g_resultadosEncuesta.respuesta1+'&r2='+g_resultadosEncuesta.respuesta2+'&r3='+g_resultadosEncuesta.respuesta3+'&pais='+g_resultadosEncuesta.pais+'&ismobile='+(g_isMobile ? '1':'0')+'&cat='+g_resultadosEncuesta.cat,
+						    type: "POST",
+						    async: true,
+						    cache: false,
+						    dataType: "json",
+						    error: function(jqXHR, textStatus, errorThrown)
+						    {
+								$('#percue-paso3b').hide();
+								$('#percue-paso4').show();						
+						    },
+						    success: function(data, textStatus, jqXHR)
+						    {
+								$('#percue-paso3b').hide();
+								$('#percue-paso4').show();						
+						    },
+						    timeout: 15000
+						});
+
+						if(window.sessionStorage)
+							window.sessionStorage.setItem("cerebriti_estadcompl", true);	
+						CookieMng.set("cerebriti_estadcompl", true, 365);			
+					}
+				}
+				else if(respIdx == 2)
+				{
+					g_resultadosEncuesta.respuesta3 = 'No me interesa';
+
+					$.ajax({
+					    url: g_gameURL+"ws_ajax.php",
+					    data: 'wsf=118&r1='+g_resultadosEncuesta.respuesta1+'&r2='+g_resultadosEncuesta.respuesta2+'&r3='+g_resultadosEncuesta.respuesta3+'&pais='+g_resultadosEncuesta.pais+'&ismobile='+(g_isMobile ? '1':'0')+'&cat='+g_resultadosEncuesta.cat,
+					    type: "POST",
+					    async: true,
+					    cache: false,
+					    dataType: "json",
+					    error: function(jqXHR, textStatus, errorThrown)
+					    {					
+        					$('#percue-paso3b').hide();
+        					$('#percue-paso4').show();
+					    },
+					    success: function(data, textStatus, jqXHR)
+					    {
+        					$('#percue-paso3b').hide();
+        					$('#percue-paso4').show();
+					    },
+					    timeout: 15000
+					});
+
+					if(window.sessionStorage)
+						window.sessionStorage.setItem("cerebriti_estadcompl", true);
+					CookieMng.set("cerebriti_estadcompl", true, 365);			
+				}
+			}
+			else if(respStep == '3c')
+			{
+				if(respIdx == 1)
+				{
+					if($('#txtEmail3c').val().length < 1)
+					{
+						alert('Tienes que introducir un email para que te podamos informar');
+					}
+					else if(!$('#chkAcepto3c').prop('checked'))
+					{
+						alert('Tienes que aceptar el check');
+					}
+					else
+					{
+						g_resultadosEncuesta.respuesta3 = $('#txtEmail3c').val();
+						
+						$.ajax({
+						    url: g_gameURL+"ws_ajax.php",
+						    data: 'wsf=118&r1='+g_resultadosEncuesta.respuesta1+'&r2='+g_resultadosEncuesta.respuesta2+'&r3='+g_resultadosEncuesta.respuesta3+'&pais='+g_resultadosEncuesta.pais+'&ismobile='+(g_isMobile ? '1':'0')+'&cat='+g_resultadosEncuesta.cat,
+						    type: "POST",
+						    async: true,
+						    cache: false,
+						    dataType: "json",
+						    error: function(jqXHR, textStatus, errorThrown)
+						    {					
+	        					$('#percue-paso3c').hide();
+	        					$('#percue-paso4').show();
+						    },
+						    success: function(data, textStatus, jqXHR)
+						    {
+	        					$('#percue-paso3c').hide();
+	        					$('#percue-paso4').show();
+						    },
+						    timeout: 15000
+						});
+
+						if(window.sessionStorage)
+							window.sessionStorage.setItem("cerebriti_estadcompl", true);
+						CookieMng.set("cerebriti_estadcompl", true, 365);				
+					}
+				}
+				else if(respIdx == 2)
+				{
+					g_resultadosEncuesta.respuesta3 = 'No me interesa';
+
+					$.ajax({
+					    url: g_gameURL+"ws_ajax.php",
+					    data: 'wsf=118&r1='+g_resultadosEncuesta.respuesta1+'&r2='+g_resultadosEncuesta.respuesta2+'&r3='+g_resultadosEncuesta.respuesta3+'&pais='+g_resultadosEncuesta.pais+'&ismobile='+(g_isMobile ? '1':'0')+'&cat='+g_resultadosEncuesta.cat,
+					    type: "POST",
+					    async: true,
+					    cache: false,
+					    dataType: "json",
+					    error: function(jqXHR, textStatus, errorThrown)
+					    {					
+        					$('#percue-paso3c').hide();
+        					$('#percue-paso4').show();
+					    },
+					    success: function(data, textStatus, jqXHR)
+					    {
+        					$('#percue-paso3c').hide();
+        					$('#percue-paso4').show();
+					    },
+					    timeout: 15000
+					});
+
+					if(window.sessionStorage)
+						window.sessionStorage.setItem("cerebriti_estadcompl", true);
+					CookieMng.set("cerebriti_estadcompl", true, 365);
+				}				
+			}
+			else if(respStep == '3d')
+			{
+				if(respIdx == 1)
+				{
+					if($('#txtEmail3d').val().length < 1)
+					{
+						alert('Tienes que introducir un email para que te podamos informar');
+					}
+					else if(!$('#chkAcepto3d').prop('checked'))
+					{
+						alert('Tienes que aceptar el check');
+					}
+					else
+					{
+						g_resultadosEncuesta.respuesta3 = $('#txtEmail3d').val();
+						
+						$.ajax({
+						    url: g_gameURL+"ws_ajax.php",
+						    data: 'wsf=118&r1='+g_resultadosEncuesta.respuesta1+'&r2='+g_resultadosEncuesta.respuesta2+'&r3='+g_resultadosEncuesta.respuesta3+'&pais='+g_resultadosEncuesta.pais+'&ismobile='+(g_isMobile ? '1':'0')+'&cat='+g_resultadosEncuesta.cat,
+						    type: "POST",
+						    async: true,
+						    cache: false,
+						    dataType: "json",
+						    error: function(jqXHR, textStatus, errorThrown)
+						    {					
+	        					$('#percue-paso3d').hide();
+	        					$('#percue-paso4').show();
+						    },
+						    success: function(data, textStatus, jqXHR)
+						    {
+	        					$('#percue-paso3d').hide();
+	        					$('#percue-paso4').show();
+						    },
+						    timeout: 15000
+						});
+
+						if(window.sessionStorage)
+							window.sessionStorage.setItem("cerebriti_estadcompl", true);
+						CookieMng.set("cerebriti_estadcompl", true, 365);				
+					}
+				}
+				else if(respIdx == 2)
+				{
+					g_resultadosEncuesta.respuesta3 = 'No me interesa';
+
+					$.ajax({
+					    url: g_gameURL+"ws_ajax.php",
+					    data: 'wsf=118&r1='+g_resultadosEncuesta.respuesta1+'&r2='+g_resultadosEncuesta.respuesta2+'&r3='+g_resultadosEncuesta.respuesta3+'&pais='+g_resultadosEncuesta.pais+'&ismobile='+(g_isMobile ? '1':'0')+'&cat='+g_resultadosEncuesta.cat,
+					    type: "POST",
+					    async: true,
+					    cache: false,
+					    dataType: "json",
+					    error: function(jqXHR, textStatus, errorThrown)
+					    {					
+        					$('#percue-paso3d').hide();
+        					$('#percue-paso4').show();
+					    },
+					    success: function(data, textStatus, jqXHR)
+					    {
+        					$('#percue-paso3d').hide();
+        					$('#percue-paso4').show();
+					    },
+					    timeout: 15000
+					});
+
+					if(window.sessionStorage)
+						window.sessionStorage.setItem("cerebriti_estadcompl", true);
+					CookieMng.set("cerebriti_estadcompl", true, 365);
+				}				
+			}			
+			else if(respStep == '4')
+			{
+				$('#persiana-cuestionario').hide();
+			}
+		});
+		
+	});
+	</script>
+
+
+			<div id="checkTextWidth" style="position:absolute;visibility:hidden;height:auto;width:auto;font-size:15px;font-family:Arial;">Habilitar bloqueo de pantalla</div>
+				<script type="text/javascript">
+					$(document).ready(function(){
+	
+						g_gameType = 6;
+						
+						g_game6definition = {};
+						g_game6definition.idjuego = 46250;
+						g_game6definition.nacertadas = 0;
+						g_game6definition.nrespuestas = 14;
+						g_game6definition.tiempoSg = 600;
+						g_game6definition.bSeHaRendido = false;
+						g_game6definition.idReto = -1;
+
+						g_game6definition.indiceActivo = -1;
+						
+						g_game6definition[0] = {respuesta: "Minimizar permisos escritura", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego0', pregunta: "Usuarios (I)", acertada: false};
+						g_game6definition[1] = {respuesta: "Seguimiento a empleados extraños", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego1', pregunta: "Usuarios (II)", acertada: false};
+						g_game6definition[2] = {respuesta: "Habilitar bloqueo de pantalla", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego2', pregunta: "Dispositivos (I)", acertada: false};
+						g_game6definition[3] = {respuesta: "Análisis y corrección software y SO", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego3', pregunta: "Dispositivos (II)", acertada: false};
+						g_game6definition[4] = {respuesta: "Protección de racks y Data Center", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego4', pregunta: "Red LAN (I)", acertada: false};
+						g_game6definition[5] = {respuesta: "Deshabilitar ping y escaneo de puertos", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego5', pregunta: "Red LAN (II)", acertada: false};
+						g_game6definition[6] = {respuesta: "Pruebas de penetración", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego6', pregunta: "Nube privada (I)", acertada: false};
+						g_game6definition[7] = {respuesta: "Supervisión del trafico entrada/salida", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego7', pregunta: "Nube privada (II)", acertada: false};
+						g_game6definition[8] = {respuesta: "Contraseñas de un solo uso", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego8', pregunta: "Nube pública (I)", acertada: false};
+						g_game6definition[9] = {respuesta: "Diligencia debida", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego9', pregunta: "Nube pública (II)", acertada: false};
+						g_game6definition[10] = {respuesta: "Políticas, pruebas seguridad", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego10', pregunta: "Instalaciones físicas (I)", acertada: false};
+						g_game6definition[11] = {respuesta: "Etiquetado de activos", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego11', pregunta: "Instalaciones físicas (II)", acertada: false};
+						g_game6definition[12] = {respuesta: "Estándar clasificación datos", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego12', pregunta: "Aplicaciones (I)", acertada: false};
+						g_game6definition[13] = {respuesta: "Pruebas software", respuestaX: 0, respuestaY: 0, elemento: 'fichaJuego13', pregunta: "Aplicaciones (II)", acertada: false};
+					
+
+
+						//-----------------------------------------------------------------
+						$('.fichaJuego').live('click', function(){
+							if(!$(this).hasClass('fichaAzul'))
+							{
+								var myID = $(this).attr('id');
+								if(myID == g_game6definition[g_game6definition.indiceActivo].elemento)
+								{
+									g_game6definition[g_game6definition.indiceActivo].acertada = true;
+									
+									$(this).removeClass('fichaBlanca');
+									$(this).addClass('fichaAzul');
+	
+									if(!game6_updateCorrect())
+									{
+										var encontradaNueva = false;
+										while(!encontradaNueva)
+										{
+											g_game6definition.indiceActivo++;
+											if(g_game6definition.indiceActivo == g_game6definition.nrespuestas)
+												g_game6definition.indiceActivo = 0;
+	
+											if(!g_game6definition[g_game6definition.indiceActivo].acertada)
+											{
+												$('#gameArenaTipo6_franja_pregunta span').html(g_game6definition[g_game6definition.indiceActivo].pregunta);
+												encontradaNueva = true;
+											}
+										}
+									}
+								}
+								else
+								{
+											
+									var indexShaking = $(this).data('myindex');
+									var timesShaking = 0;
+									var timerShaking = setInterval(function(){
+										if(timesShaking % 2 == 0)
+										{
+											var y = g_game6definition[indexShaking].respuestaY - 4;
+											$('#fichaJuego'+indexShaking).css('top', y + 'px');
+										}
+										else
+										{
+											var y = g_game6definition[indexShaking].respuestaY + 4;
+											$('#fichaJuego'+indexShaking).css('top', y + 'px');
+										}
+										timesShaking++;
+										if(timesShaking > 5)
+											clearInterval(timerShaking);
+									}, 200);
+									
+							
+
+									var encontradaNueva = false;
+									while(!encontradaNueva)
+									{
+										g_game6definition.indiceActivo++;
+										if(g_game6definition.indiceActivo == g_game6definition.nrespuestas)
+											g_game6definition.indiceActivo = 0;
+
+										if(!g_game6definition[g_game6definition.indiceActivo].acertada)
+										{
+											$('#gameArenaTipo6_franja_pregunta span').html(g_game6definition[g_game6definition.indiceActivo].pregunta);
+											encontradaNueva = true;
+										}
+									}									
+								}
+							}
+						});
+
+						//-----------------------------------------------------------------
+						$('#gameArenaTipo6_franja_flechaDerecha').live('click', function(){
+							var encontradaNueva = false;
+							while(!encontradaNueva)
+							{
+								g_game6definition.indiceActivo++;
+								if(g_game6definition.indiceActivo == g_game6definition.nrespuestas)
+									g_game6definition.indiceActivo = 0;
+
+								if(!g_game6definition[g_game6definition.indiceActivo].acertada)
+								{
+									$('#gameArenaTipo6_franja_pregunta span').html(g_game6definition[g_game6definition.indiceActivo].pregunta);
+									encontradaNueva = true;
+								}
+							}
+						});
+	
+					});
+					</script>
+	
+	<div id="gameArenaTipo6" class="gameArena playingGameArena">
+	
+		<div id="gameArenaTipo6_franja">
+			<div id="gameArenaTipo6_franja_flechaIzquierda"></div>
+			<div id="gameArenaTipo6_franja_pregunta">
+				<span>Usuarios (I)</span>
+			</div>
+			<div id="gameArenaTipo6_franja_flechaDerecha"></div>
+		</div>
+		
+		<div id="gameArenaTipo6_containerRespuestas" style="height: 426px;">
+	<div class="fichaJuego fichaBlanca" id="fichaJuego6" data-myindex="6" style="left: 562.2px; top: 93.4px; margin-top: 20px;">
+		<span>Pruebas de penetración </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego10" data-myindex="10" style="left: 42.4px; top: 93.4px; margin-top: 20px;">
+		<span>Políticas, pruebas seguridad </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego8" data-myindex="8" style="left: 7.2px; top: 31.2px; margin-top: 20px;">
+		<span>Contraseñas de un solo uso </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego13" data-myindex="13" style="left: 304.4px; top: 155.6px; margin-top: 20px;">
+		<span>Pruebas software </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego5" data-myindex="5" style="left: 503.6px; top: 31.2px; margin-top: 20px;">
+		<span>Deshabilitar ping y escaneo de puertos </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego9" data-myindex="9" style="left: 793.6px; top: 93.4px; margin-top: 20px;">
+		<span>Diligencia debida </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego12" data-myindex="12" style="left: 303.8px; top: 93.4px; margin-top: 20px;">
+		<span>Estándar clasificación datos </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego1" data-myindex="1" style="left: 700.8px; top: 155.6px; margin-top: 20px;">
+		<span>Seguimiento a empleados extraños </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego3" data-myindex="3" style="left: 231.4px; top: 31.2px; margin-top: 20px;">
+		<span>Análisis y corrección software y SO </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego4" data-myindex="4" style="left: 167.333px; top: 217.8px; margin-top: 20px;">
+		<span>Protección de racks y Data Center </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego7" data-myindex="7" style="left: 14.2px; top: 155.6px; margin-top: 20px;">
+		<span>Supervisión del trafico entrada/salida </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego11" data-myindex="11" style="left: 799.8px; top: 31.2px; margin-top: 20px;">
+		<span>Etiquetado de activos </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego2" data-myindex="2" style="left: 592.667px; top: 217.8px; margin-top: 20px;">
+		<span>Habilitar bloqueo de pantalla </span>
+	</div>
+	<div class="fichaJuego fichaBlanca" id="fichaJuego0" data-myindex="0" style="left: 465.6px; top: 155.6px; margin-top: 20px;">
+		<span>Minimizar permisos escritura </span>
+	</div>
+		
+		</div>
+	
+		<div class="clear_both_div"></div>
+	
+	</div>
+	<div class="clear_both_div"></div>
+	
+	
+	
+	<div id="gameArenaTipo6_solution" class="gameArenaSolution">
+	
+		<table style="width: 100%">
+	
+		<tbody><tr>			<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Usuarios (I) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Minimizar permisos escritura </span>
+				</div></td>
+							<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Usuarios (II) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Seguimiento a empleados extraños </span>
+				</div></td>
+							</tr>
+			<tr>
+						<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Dispositivos (I) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Habilitar bloqueo de pantalla </span>
+				</div></td>
+							<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Dispositivos (II) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Análisis y corrección software y SO </span>
+				</div></td>
+							</tr>
+			<tr>
+						<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Red LAN (I) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Protección de racks y Data Center </span>
+				</div></td>
+							<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Red LAN (II) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Deshabilitar ping y escaneo de puertos </span>
+				</div></td>
+							</tr>
+			<tr>
+						<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Nube privada (I) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Pruebas de penetración </span>
+				</div></td>
+							<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Nube privada (II) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Supervisión del trafico entrada/salida </span>
+				</div></td>
+							</tr>
+			<tr>
+						<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Nube pública (I) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Contraseñas de un solo uso </span>
+				</div></td>
+							<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Nube pública (II) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Diligencia debida </span>
+				</div></td>
+							</tr>
+			<tr>
+						<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Instalaciones físicas (I) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Políticas, pruebas seguridad </span>
+				</div></td>
+							<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Instalaciones físicas (II) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Etiquetado de activos </span>
+				</div></td>
+							</tr>
+			<tr>
+						<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Aplicaciones (I) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Estándar clasificación datos </span>
+				</div></td>
+							<td style="width: 25%; text-align: right; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaBlanca">
+					<span>Aplicaciones (II) </span>
+				</div></td>
+			<td style="width: 25%; text-align: left; padding-left: 5px; padding-top: 3px; padding-bottom: 3px;"><div class="fichaJuegoSolucion fichaAzul">
+					<span>Pruebas software </span>
+				</div></td>
+							</tr>
+			<tr>
+			</tr>		
+		</tbody></table>	
+	
+	
+		<div class="clear_both_div"></div>
+	
+	</div>
+	<div class="clear_both_div"></div>
+	
+	
+	
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			function getRand(min, max)
+			{
+				return Math.floor(Math.random() * max + min);
+			}
+
+			function getTextWidth(t)
+			{
+				$("#checkTextWidth").html(t);
+				var test = document.getElementById("checkTextWidth");
+				return test.clientWidth + 30;
+			}
+
+			var g_totalElementos = g_game6definition.nrespuestas;
+
+			var totalWidth = 0;
+			for(var i = 0; i < g_totalElementos; i++)
+				totalWidth += getTextWidth(g_game6definition[i].respuesta);
+
+			totalWidth += (g_totalElementos - 1) * 30;
+
+			var lines = Math.ceil(totalWidth / 980);
+
+			if(lines > 5)
+			{
+				// deberiamos ampliar la altura de la zona de juego
+			}
+
+			var maxItemsPerLine = Math.ceil(g_totalElementos / lines);
+
+			var factorY = (280 - (lines * 31)) / (lines + 1);
+			var currentY = factorY;
+			
+			var posicionados = [];
+			for(var i = 0; i < g_totalElementos; i++)
+				posicionados[i] = false;
+
+			var lineItems = [];
+			
+			var itemsPerLine = 0;
+			var newX = 40;
+			for(var i = 0; i < g_totalElementos; i++)
+			{
+				var index = getRand(0, g_totalElementos-1);
+				while(posicionados[index])
+				{
+					index++;
+					if(index >= g_totalElementos)
+						index = 0;
+				}
+				posicionados[index] = true;
+
+				var idElemento = g_game6definition[index].elemento;
+
+				g_game6definition[index].respuestaX = newX;
+				g_game6definition[index].respuestaY = currentY;
+
+				$('#'+idElemento).css('left', newX + 'px');
+				$('#'+idElemento).data('origin_x', newX);			
+				
+				$('#'+idElemento).css('top', currentY + 'px');
+				$('#'+idElemento).data('origin_y', currentY);			
+
+				lineItems[itemsPerLine] = index;
+				
+				itemsPerLine++;
+				if(itemsPerLine >= maxItemsPerLine)
+				{
+					newX = 40;
+					currentY = currentY + factorY + 31;
+					itemsPerLine = 0;
+
+					// vamos a ajustar las distancias entre elementos de la linea
+					var occupiedWidth = 0;
+					for(var j = 0; j < maxItemsPerLine; j++)
+						occupiedWidth += getTextWidth(g_game6definition[lineItems[j]].respuesta);
+
+					var spaceBetween = (980 - occupiedWidth) / (maxItemsPerLine + 1);
+					var newerX = spaceBetween;
+					for(var j = 0; j < maxItemsPerLine; j++)
+					{
+						var idElemento2 = g_game6definition[lineItems[j]].elemento;
+
+						g_game6definition[lineItems[j]].respuestaX = newerX;
+
+						$('#'+idElemento2).css('left', newerX + 'px');
+						$('#'+idElemento2).data('origin_x', newerX);
+
+						newerX += (getTextWidth(g_game6definition[lineItems[j]].respuesta) + spaceBetween);								
+					}
+
+					lineItems = [];
+				}
+				else
+				{
+					newX = newX + getTextWidth(g_game6definition[index].respuesta) + 40;
+				}
+			}
+
+			if(itemsPerLine < maxItemsPerLine)
+			{
+				// vamos a ajustar las distancias entre elementos de la linea
+				var occupiedWidth = 0;
+				for(var j = 0; j < itemsPerLine; j++)
+					occupiedWidth += getTextWidth(g_game6definition[lineItems[j]].respuesta);
+
+				var spaceBetween = (980 - occupiedWidth) / (itemsPerLine + 1);
+				var newerX = spaceBetween;
+				for(var j = 0; j < itemsPerLine; j++)
+				{
+					var idElemento2 = g_game6definition[lineItems[j]].elemento;
+
+					g_game6definition[lineItems[j]].respuestaX = newerX;
+
+					$('#'+idElemento2).css('left', newerX + 'px');
+					$('#'+idElemento2).data('origin_x', newerX);
+
+					newerX += (getTextWidth(g_game6definition[lineItems[j]].respuesta) + spaceBetween);								
+				}
+
+				lineItems = [];
+			}
+
+			g_game6definition.indiceActivo = 0;
+			$('#gameArenaTipo6_franja_pregunta span').html(g_game6definition[0].pregunta);
+
+			setTimeout(function(){
+				var totalHeight = $(window).height(); 
+				var neededHigh = 0;
+				var franjaHeight = parseInt($('div#gameArenaTipo6_franja').height());
+				var toTop = parseInt($('div#barraDeJuego').height()) + franjaHeight;
+				var lowBar = parseInt($('div#barrasInfoJuegoFooter').height());
+				var elementHeight = 0;$('#'+idElemento).outerHeight(true);
+				for(var i = 0; i < g_totalElementos; i++)
+				{
+					var idElemento = g_game6definition[i].elemento;
+					elementHeight = $('#'+idElemento).outerHeight(true);
+					var myHigh = $('#'+idElemento).position().top + elementHeight;
+					if(myHigh > neededHigh)
+						neededHigh = myHigh;
+				}
+				var availableSpace = totalHeight - toTop - lowBar;
+				if(availableSpace > neededHigh)
+				{
+					var gameSpace = availableSpace - 3; /*lineas de clear:both*/
+					$('div#gameArenaTipo6_containerRespuestas').height(gameSpace);
+
+					var rows = neededHigh / elementHeight;
+					var blankSpace = gameSpace - neededHigh;
+					var rowBlankSpace = Math.floor(blankSpace / rows);
+					if(rowBlankSpace > 0)
+					{
+						$('div#gameArenaTipo6 div.fichaJuego').each(function(){
+							$(this).css('margin-top', rowBlankSpace+'px');
+						});
+					}
+				}
+				else if(availableSpace < neededHigh)
+				{
+					var gameSpace = neededHigh + 3; /*lineas de clear:both*/
+					$('div#gameArenaTipo6_containerRespuestas').height(gameSpace);
+					$('div#gameArenaTipo6').height(gameSpace + franjaHeight);
+				}
+			}, 2000);			
+		});
+	</script>	
+	
+
+<script type="text/javascript">
+$(document).ready(function(){
+	/*
+	var containerHeight = $('.gameArenaSolution:eq(0)').height();
+	var medidas = Math.floor((containerHeight - 68) / 74);
+	var newHeight = medidas * 74;
+	if(newHeight < 370)
+		newHeight = 370;
+	$('#ingameRanking_containerInterno').height(newHeight);
+
+	var totalHeight = newHeight;//$('#ingameRanking_containerInterno').height();
+	console.log(totalHeight);
+	var disposableHeight = totalHeight - 74; // 74 para los bordes
+	console.log(disposableHeight);
+	var visibles = Math.floor(disposableHeight / 74);
+	console.log(visibles); 
+	for(var i = visibles + 1; i <= 8; i++)
+	{
+		$('.iR_lineaJuego0'+i).each(function(){
+			$(this).hide();
+		});
+	}
+	*/
+});
+</script>
+
+<div id="ingameRanking">
+
+	<div id="ingameRanking_container">
+	
+		<div id="ingameRanking_containerAjuste">
+		
+		
+		
+			<div id="ingameRanking_containerInterno">
+			
+				<div id="ingameRanking_bloqueBoton2" class="ingameRanking_bloqueBoton">
+					<div class="ingameRanking_bloqueBotonAjuste">
+						<div id="ingameRanking_bloqueBotonPaginacion2"></div>
+					</div>
+				</div>			
+			
+			<div id="ingameRanking_bloque01" style="height:100%;">
+			
+				<div class="ingameRanking_bloqueIzquierdo">
+				<script type="text/javascript">
+				function retoFinalizadoCallback(misPuntos)
+				{
+				}
+				</script>
+
+				<div id="ingameRanking_bloqueAjusteLoginSecre">
+					<div id="ingameRanking_bloqueLoginSecre">
+					
+					
+						<form id="ingameRanking_formLoginSecre" method="POST" action="https://www.cerebriti.com/juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad/" enctype="multipart/form-data">
+							<input type="hidden" name="f" id="f" value="60">
+	
+							<div id="ingameRanking_containerLoginSecre_containerEmail" class="ingameRanking_containerLoginSecre_inputContainer">
+								<input type="text" name="txtLoginEmail3" id="txtLoginEmail3" size="40" placeholder="Tu dirección de correo electrónico">
+							</div>
+							
+							<div id="ingameRanking_containerLoginSecre_containerPassword" class="ingameRanking_containerLoginSecre_inputContainer">
+								<input type="password" name="txtLoginPassword3" id="txtLoginPassword3" size="40" placeholder="Tu contraseña">
+							</div>
+							
+							<div id="ingameRanking_containerLoginSecre_containerIniciar">
+								<span id="ingameRanking_containerLoginSecre_iniciarText">Iniciar sesión <img src="./Actividad3_files/flecha_blanca.png"></span>
+							</div>
+							
+						</form>
+						<div id="ingameRanking_containerRegistroSecre_botonFB"></div>
+						<div id="ingameRanking_containerRegistroSecre_subtitulo">o regístrate con tu <span id="ingameRanking_containerRegistroSecre_botonEmail">correo electrónico</span>.</div>
+					
+					</div>
+				</div>
+				
+				</div>
+				
+				<div class="ingameRanking_bloqueDerecho">
+				
+					<div class="ingameRanking_lineaTitulo">Otros juegos similares:</div>
+				
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego01">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/da732662d870e7e73420bac1b2abc31b.png">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/manejo-amenazas-capitulo-8-ciberseguridad">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Manejo de amenazas: Ciberseguridad</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 04/05/2019 por</span> <a href="https://www.cerebriti.com/usuario/nelson-vasquez1/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">nelson</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego02">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/684834a1904e94b282db5546a44c17fb.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/tic-seguridad-informatica-">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">TIC seguridad informática</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 20/11/2017 por</span> <a href="https://www.cerebriti.com/usuario/ana-pira/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">ana</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego03">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/af802139bd0ce2205b743a29614c5be6.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/tic-seguridad-informatica">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">TIC seguridad informática #2</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 20/11/2017 por</span> <a href="https://www.cerebriti.com/usuario/carmen-huertas/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">carmen</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego04">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/4e3208b96f407f679fd91497612a025a.png">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/tic-seguridad-informatica1">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">TIC - Seguridad informática #2</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 28/11/2017 por</span> <a href="https://www.cerebriti.com/usuario/carmen-huertas/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">carmen</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego05">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/7bd4661e89edcbbd6f968fc6c2544f13.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/seguridad-informatica2">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Seguridad informática</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 21/02/2018 por</span> <a href="https://www.cerebriti.com/usuario/geny-vargas/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Geny</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego06">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/8edb4bfb4cae0b7256ae059cef2e56fe.png">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/cvdg-tic-informatica-seguridad-informatica-">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">TIC - Seguridad informática</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 28/11/2017 por</span> <a href="https://www.cerebriti.com/usuario/alvaro-romero1/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Alexander Álvaro</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego07">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/63a0e6b398e036dbb2a6119ab59357b1.png">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/capitulo-7-ciberseguridad">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Ciberseguridad</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 26/04/2019 por</span> <a href="https://www.cerebriti.com/usuario/nelson-vasquez1/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">nelson</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego08">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/3da34a3d78c89db5638a6b6020a74b6c.png">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/sistemas-operativos-2">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Sistemas operativos - Test #3</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 01/12/2017 por</span> <a href="https://www.cerebriti.com/usuario/laura-gomez4/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Laura</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+	
+					
+					</div>
+				
+				</div>
+				
+				
+			<div id="ingameRanking_bloque02">
+			
+				<div class="ingameRanking_bloqueIzquierdo">
+				
+					<div class="ingameRanking_lineaTitulo">Otros juegos similares:</div>
+				
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego01">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/b6ce58ebeda6505f444cf70056193533.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/test-de-informatica1">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Test de informática (2)</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 07/04/2019 por</span> <a href="https://www.cerebriti.com/usuario/sofia--yesenia-letrado--lopez/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Sofia, yesenia</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego02">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/08224f1ca87bc289bb1f8122cc3591d7.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/topologias-de-las-redes-informaticas">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Topologías de las redes informáticas</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 28/11/2017 por</span> <a href="https://www.cerebriti.com/usuario/laura-gomez4/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Laura</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego03">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/ef85d9f22c6537c2b0d9322f96d26fcd.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/informatica-1103-">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Informática 101</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 13/02/2019 por</span> <a href="https://www.cerebriti.com/usuario/julian--rodriguez-/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Julian</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego04">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/8ec9ce6f655539e105086466dd1d38d4.png">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/tecnocomunicaciones">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Tecnocomunicaciones</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 06/04/2019 por</span> <a href="https://www.cerebriti.com/usuario/malcon-figueroa/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Malcon</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego05">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/d74fa9688e0a6f4ed06fa214e195fb32.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/tic-primer-parcial--administracion">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">TIC - Primer parcial: administración</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 20/10/2017 por</span> <a href="https://www.cerebriti.com/usuario/sandra-17/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Sandra</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego06">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/b4f6be6fb2988ca20ecea4e325e93d47.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/los-tics.">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Las TICs (2)</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 05/04/2019 por</span> <a href="https://www.cerebriti.com/usuario/-nicole-tello/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Evelyn Nicole</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego07">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/ae7d013b4ad06a1294dec9c01bbcd567.png">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/tics-descubre-y-aprende.">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">TICs: Descubre y aprende</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 06/04/2019 por</span> <a href="https://www.cerebriti.com/usuario/-nicole-tello/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Evelyn Nicole</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego08">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/0ae617c5e8e9c6341c9e9e271743a782.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/act--1-1">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Sistemas operativos - Test #4</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 11/04/2018 por</span> <a href="https://www.cerebriti.com/usuario/aida-andres/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Aida</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+					
+				
+				</div>
+				
+				<div class="ingameRanking_bloqueDerecho">
+				
+					<div class="ingameRanking_lineaTitulo">Otros juegos similares:</div>
+				
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego01">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/f53ae5d6e28885b794b30c2cfce584c7.png">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/dentro-de-la-seguridad-informatica">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Dentro de la seguridad informática</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 12/03/2019 por</span> <a href="https://www.cerebriti.com/usuario/yaiza-barrero/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Yaiza</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego02">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/0ed272aa76b46d3e263a2707994bf2ab.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/seguridad-informatica1">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Seguridad informática #2</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 28/11/2017 por</span> <a href="https://www.cerebriti.com/usuario/m--teresa-guerrero/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Mª Teresa</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego03">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/cb150dc220af6b97dc259dd69e6a816f.png">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/tecnologia-test--vdg-">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Tecnología test - Hardware, software y más</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 01/12/2017 por</span> <a href="https://www.cerebriti.com/usuario/pablo-sanchez1/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Pablo</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego04">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/39be0561bffce00e6820d98da8d4f0b6.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/ordenadores-vdg-tic">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Ordenadores: TIC</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 01/12/2017 por</span> <a href="https://www.cerebriti.com/usuario/alvaro-romero1/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Alexander Álvaro</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego05">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/94d51e51cf00fb215084d5b2fc89d42f.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/seif-1sm2">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Seguridad informática 1</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 26/09/2017 por</span> <a href="https://www.cerebriti.com/usuario/sergio-cortes1/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">sergio</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego06">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/d7701ee53c1bf1749b0e53d13142660a.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/confidencialidad">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Confidencialidad</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 09/05/2018 por</span> <a href="https://www.cerebriti.com/usuario/karen-guzman/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Karen</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego07">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/a0429096ce82db1a5496a651ac5f0c99.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/las-nuevas-tecnologias">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Las Nuevas Tecnologías</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 01/12/2014 por</span> <a href="https://www.cerebriti.com/usuario/lucia-esteva/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">LUCIA</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+			<div class="ingameRanking_lineaJuegosSimilares iR_lineaJuego08">
+				<div class="ingameRanking_lineaJuegosSimilares_imageContainer">
+					<img class="ingameRanking_lineaJuegosSimilares_imageImg " src="./Actividad3_files/df4bf74476a5cbff376c1f45805dcc4b.jpg">
+				</div>
+				<img class="ingameRanking_lineaJuegosSimilares_flechaSeparador" src="./Actividad3_files/mini_flecha_gt.png">
+				<div style="position: absolute; left: 108px; top: 23px; width: 314px;" class="ingameRanking_lineaJuegosSimilares_datosContainer">
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/mis-primeras-palabras-tic">
+						<span class="ingameRanking_lineaJuegosSimilares_tituloJuego">Mis primeras palabras TIC</span> 
+					</a> 
+					<span class="ingameRanking_lineaJuegosSimilares_fechaCreado">Creado en 03/02/2015 por</span> <a href="https://www.cerebriti.com/usuario/sem-sobrino/resumen/"><span class="ingameRanking_lineaJuegosSimilares_creadoPor">Sem</span> </a>
+					<div class="clear_both_div"></div>
+				</div>
+				
+				<div class="ingameRanking_lineaJuegosSimilares_lineaSeparacion"></div>
+				
+			</div>
+			<div class="clear_both_div"></div>
+	
+					
+					</div>
+				
+				</div>				
+				
+				<script type="text/javascript">
+				$(document).ready(function(){
+					$('#ingameRanking_bloqueBotonPaginacion1').click(function(){
+						$('#ingameRanking_bloque01').hide();
+						$('#ingameRanking_bloque02').show();
+						$('#ingameRanking_bloqueBoton1').hide();
+						$('#ingameRanking_bloqueBoton2').css('display', 'table');
+					});
+
+					$('#ingameRanking_bloqueBotonPaginacion2').click(function(){
+						$('#ingameRanking_bloque01').show();
+						$('#ingameRanking_bloque02').hide();
+						$('#ingameRanking_bloqueBoton1').show();
+						$('#ingameRanking_bloqueBoton2').hide();
+					});					
+				});
+				</script>
+								
+				<div id="ingameRanking_bloqueBoton1" class="ingameRanking_bloqueBoton">
+					<div class="ingameRanking_bloqueBotonAjuste">
+						<div id="ingameRanking_bloqueBotonPaginacion1"></div>
+					</div>
+				</div>
+			
+			</div>
+			
+			
+		
+		</div>
+	
+	</div>
+	
+	<div id="ingameRanking_tabVertAlineatorContainer">
+		<div class="tabVertAlineator">
+			<div id="ingameRanking_closeTab"></div>
+		</div>
+		<div class="tabVertAlineator">
+			<div id="ingameRanking_openTab"></div>
+		</div>	
+	</div>
+	
+</div>
+</div>
+<!-- containerJuego -->
+	<div id="barrasInfoJuegoFooter">
+	
+	
+		<div id="barraFooterContainerVecesJugado"> 
+			Jugado <span id="marcadorFooterVecesJugado">52</span> veces.		</div>	
+		
+		<div id="botonMeRindoBarraFooter" style=""></div>
+			
+		<div id="infoFooterContainerDenuncia">
+			<div id="botonDenunciarBarraFooter"></div>
+			<span id="infoFooterMensajeFallo">¿Has encontrado algún fallo?</span>
+		</div>		
+	
+	</div>
+	</div>
+	<!-- mainGameContainer -->
+
+		<div id="optionsGameContainer">
+	
+		<div id="optionsGame_LeftColumn">
+	
+			<div class="optionsgame_LeftColumn_bloque" id="optionsGame_LeftColumnSugerenciasEtiquetas">
+			
+				<div id="optionsgame_LeftColumn_nubeTags">
+					<a href="https://www.cerebriti.com/juegos-de-inform%C3%A1tica/tag/mas-recientes/">
+						<div class="og_RC_tagContainer backColorTagGrey">
+							<span>Juegos de informática </span>
+						</div> 
+					</a>
+					<a href="https://www.cerebriti.com/juegos-de-TIC/tag/mas-recientes/">
+						<div class="og_RC_tagContainer backColorTagGrey">
+							<span>Juegos de TIC </span>
+						</div> 
+					</a>
+					<a href="https://www.cerebriti.com/juegos-de-seguridad+inform%C3%A1tica/tag/mas-recientes/">
+						<div class="og_RC_tagContainer backColorTagGrey">
+							<span>Juegos de seguridad informática </span>
+						</div> 
+					</a>
+					<a href="https://www.cerebriti.com/juegos-de-ciberseguridad/tag/mas-recientes/">
+						<div class="og_RC_tagContainer backColorTagGrey">
+							<span>Juegos de ciberseguridad </span>
+						</div> 
+					</a>
+		
+		<a href="https://www.cerebriti.com/juegos-carrusel/tipo/mas-recientes/">
+			<div class="og_RC_tagContainer backColorTagGrey">
+				<span>Juegos de Carrusel de preguntas </span>
+			</div> 
+		</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/">
+						<div class="og_RC_tagContainer background_categoria12 special_background_categoria12">
+							<span class="letraBlanca">Juegos de Tecnología</span>
+						</div> 
+					</a>
+					
+				</div>			
+
+			</div>
+	
+	
+	
+	
+			<div class="optionsGame_ColumnTitle">
+				<span>Tu puntuación:</span>
+				
+				<span class="minitexto">inicia sesión para guardar tu puntuación</span>
+				
+			</div>
+
+			
+			<div class="optionsgame_LeftColumn_bloque" id="optionsGame_LeftColumnRegistrate">
+			
+				<form id="ingameRanking_formLogin" method="POST" action="https://www.cerebriti.com/ranking/general/" enctype="multipart/form-data">
+					<input type="hidden" name="f" id="f" value="60">
+					
+					<div id="ingameRanking_containerLogin_containerEmail" class="ingameRanking_containerLogin_inputContainer"><input type="text" name="txtLoginEmail" id="txtLoginEmail" size="32"></div>
+					<div id="ingameRanking_containerLogin_containerPassword" class="ingameRanking_containerLogin_inputContainer"><input type="password" name="txtLoginPassword" id="txtLoginPassword" size="32"></div>
+					<div id="ingameRanking_containerLogin_containerIniciar">
+						<span id="ingameRanking_containerLogin_iniciarText">Iniciar sesión <img src="./Actividad3_files/flecha_blanca.png"></span>
+					</div>
+						
+				</form>
+						
+				<div id="ingameRanking_containerRegistro_botonFB"></div>
+				<div id="ingameRanking_containerRegistro_subtitulo">o regístrate con tu <span id="ingameRanking_containerRegistroSecre_botonEmail">correo electrónico</span>.</div>
+			</div>
+			
+
+			
+			<div class="optionsGame_ColumnTitle">
+				<span>Ránkings:</span>
+			</div>
+
+			<div class="optionsgame_LeftColumn_bloque" id="optionsGame_LeftColumnRankings">
+			
+				<div id="oG_LeftColumnRankings_rankingZona01" style="display: none;">
+				
+					<div id="oG_LeftColumnRankings_rankingIzquierda">
+						<div class="og_LCR_titulo">Clasificación por puntos (último mes)</div>
+					
+						<table style="width:307px;">
+								<tbody><tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo og_LCR_linea_posicion_bocadilloGrisOscuro"><span>1º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisOscuro"></div>
+									</td>
+									
+									<td class="og_LCR_linea_imagen">
+										<img src="./Actividad3_files/302c6a01b5ca96912f68def139c0d7d5.jpg">
+									</td>
+										
+									<td class="og_LCR_linea_puntuacion">
+										<div class="og_LCR_linea_puntuacion_texto"><a href="https://www.cerebriti.com/usuario/moises-ariza/resumen/">thedanirep j</a></div>
+										<div class="og_LCR_linea_puntuacion_bocadillo og_LCR_linea_puntuacion_bocadilloGrisOscuro"><span>7015</span></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>2º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+								
+									<td class="og_LCR_linea_imagen">	
+										<img src="./Actividad3_files/default_avatar_players.gif">
+									</td>
+										
+									<td class="og_LCR_linea_puntuacion">
+										<div class="og_LCR_linea_puntuacion_texto"><a href="https://www.cerebriti.com/usuario/cesar-vidal/resumen/">Cesar V</a></div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>6450</span></div>
+									</td>
+								</tr>	
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>3º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+								
+									<td class="og_LCR_linea_imagen">	
+										<img src="./Actividad3_files/default_avatar_players.gif">
+									</td>
+										
+									<td class="og_LCR_linea_puntuacion">
+										<div class="og_LCR_linea_puntuacion_texto"><a href="https://www.cerebriti.com/usuario/fernando-hernandez3/resumen/">Fernando H</a></div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>3239</span></div>
+									</td>
+								</tr>	
+							</tbody></table>
+					
+					</div>
+					
+					<div id="oG_LeftColumnRankings_rankingDerecha">
+						<div class="og_LCR_titulo">Clasificación por nota media</div>
+					
+						<table style="width:307px;">
+								<tbody><tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo og_LCR_linea_posicion_bocadilloGrisOscuro"><span>1º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisOscuro"></div>
+									</td>
+									
+									<td class="og_LCR_linea_imagen">
+										<img src="./Actividad3_files/default_avatar_players.gif">
+									</td>
+										
+									<td class="og_LCR_linea_puntuacion">
+										<div class="og_LCR_linea_puntuacion_texto"><a href="https://www.cerebriti.com/usuario/sara-nicolle-reyes-ramirez/resumen/">SARA NICOLLE R</a></div>
+										<div class="og_LCR_linea_puntuacion_bocadillo og_LCR_linea_puntuacion_bocadilloGrisOscuro"><span>10,00</span></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>2º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+								
+									<td class="og_LCR_linea_imagen">	
+										<img src="./Actividad3_files/1554f7dc4c199b4f775ac07a48b310fd.jpg">
+									</td>
+										
+									<td class="og_LCR_linea_puntuacion">
+										<div class="og_LCR_linea_puntuacion_texto"><a href="https://www.cerebriti.com/usuario/guadalupe-garcia2/resumen/">Guadalupe G</a></div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>10,00</span></div>
+									</td>
+								</tr>	
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>3º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+								
+									<td class="og_LCR_linea_imagen">	
+										<img src="./Actividad3_files/e1e47609a95e1ffa2fd9c41ec5425bff.jpg">
+									</td>
+										
+									<td class="og_LCR_linea_puntuacion">
+										<div class="og_LCR_linea_puntuacion_texto"><a href="https://www.cerebriti.com/usuario/unalumnoxd-xd/resumen/">UnAlumnoxD x</a></div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>10,00</span></div>
+									</td>
+								</tr>	
+							</tbody></table>
+					
+					</div>					
+				
+				</div>
+				
+				<div id="oG_LeftColumnRankings_rankingZona02" style="display: block;">
+				
+					<div id="oG_LeftColumnRankings_rankingIzquierda">
+						<div class="og_LCR_titulo">Liga Universitaria</div>
+					
+						<table style="width:307px;">
+								<tbody><tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo og_LCR_linea_posicion_bocadilloGrisOscuro"><span>1º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisOscuro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Universidad Francisco de Vitoria</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo og_LCR_linea_puntuacion_bocadilloGrisOscuro"><span>0,90</span></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>2º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Universidad Antonio de Nebrija</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>0,83</span></div>
+									</td>
+								</tr>	
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>3º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Universidad de València</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>0,75</span></div>
+									</td>
+								</tr>	
+							</tbody></table>
+					
+					</div>
+					
+					<div id="oG_LeftColumnRankings_rankingDerecha">
+						<div class="og_LCR_titulo">Liga de Profesiones</div>
+					
+						<table style="width:307px;">
+								<tbody><tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo og_LCR_linea_posicion_bocadilloGrisOscuro"><span>1º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisOscuro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Conserjes</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo og_LCR_linea_puntuacion_bocadilloGrisOscuro"><span>1,28</span></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>2º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Decoradores</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>0,68</span></div>
+									</td>
+								</tr>	
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>3º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Electricistas</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>0,67</span></div>
+									</td>
+								</tr>	
+							</tbody></table>
+					
+					</div>					
+				
+				</div>		
+				
+				<div id="oG_LeftColumnRankings_rankingZona03" style="display: none;">
+				
+					<div id="oG_LeftColumnRankings_rankingIzquierda">
+						<div class="og_LCR_titulo">Liga de Ciudades</div>
+					
+						<table style="width:307px;">
+								<tbody><tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo og_LCR_linea_posicion_bocadilloGrisOscuro"><span>1º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisOscuro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Puntagorda</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo og_LCR_linea_puntuacion_bocadilloGrisOscuro"><span>10,00</span></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>2º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Puebla de Sancho Pérez</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>10,00</span></div>
+									</td>
+								</tr>	
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>3º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Idiazabal</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>9,78</span></div>
+									</td>
+								</tr>	
+							</tbody></table>
+					
+					</div>
+					
+					<div id="oG_LeftColumnRankings_rankingDerecha">
+						<div class="og_LCR_titulo">Liga de Países</div>
+					
+						<table style="width:307px;">
+								<tbody><tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo og_LCR_linea_posicion_bocadilloGrisOscuro"><span>1º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisOscuro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Islas Caimán</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo og_LCR_linea_puntuacion_bocadilloGrisOscuro"><span>9,34</span></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>2º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Corea del Norte</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>3,33</span></div>
+									</td>
+								</tr>	
+								<tr>
+									<td class="og_LCR_linea_posicion">
+										<div class="og_LCR_linea_posicion_bocadillo"><span>3º</span></div>
+										<div class="og_LCR_linea_posicion_PichorricoGrisClaro"></div>
+									</td>
+										
+									<td class="og_LCR_linea_puntuacionLarga">
+										<div class="og_LCR_linea_puntuacion_textoLarga">Islas Vírgenes, EE.UU.</div>
+										<div class="og_LCR_linea_puntuacion_bocadillo"><span>3,33</span></div>
+									</td>
+								</tr>	
+							</tbody></table>
+					
+					</div>					
+				
+				</div>	
+				
+			<script type="text/javascript">
+			var g_rankingCarruselPos = 1;
+			$(document).ready(function(){
+				setInterval(function(){
+					$('#oG_LCR_ranking_carrusel'+g_rankingCarruselPos).removeClass('oG_LCR_ranking_carruselAzul');
+					$('#oG_LCR_ranking_carrusel'+g_rankingCarruselPos).addClass('oG_LCR_ranking_carruselGris');
+
+					$('#oG_LeftColumnRankings_rankingZona0'+g_rankingCarruselPos).hide();
+					
+					g_rankingCarruselPos++;
+					if(g_rankingCarruselPos > 3)
+						g_rankingCarruselPos = 1;
+
+					$('#oG_LeftColumnRankings_rankingZona0'+g_rankingCarruselPos).show();
+
+					$('#oG_LCR_ranking_carrusel'+g_rankingCarruselPos).addClass('oG_LCR_ranking_carruselAzul');
+					$('#oG_LCR_ranking_carrusel'+g_rankingCarruselPos).removeClass('oG_LCR_ranking_carruselGris');
+				}, 4000);
+			});
+			</script>				
+				
+				<div id="oG_LCR_ranking_carrusel">
+					<div id="oG_LCR_ranking_carrusel1" class="oG_LCR_ranking_carruselGris"></div>
+					<div id="oG_LCR_ranking_carrusel2" class="oG_LCR_ranking_carruselAzul"></div>
+					<div id="oG_LCR_ranking_carrusel3" class="oG_LCR_ranking_carruselGris"></div>
+				</div>
+				
+				<div id="oG_LeftColumnRanking_boton" class="bP_cI_bloque_containerBoton">
+					<a href="https://www.cerebriti.com/ranking/general/"><div class="bP_cI_bloque_boton"><span>Ver todos</span> <img src="./Actividad3_files/flecha_blanca_5x9.gif"></div></a>
+				</div>
+			
+			</div>
+			
+			
+
+
+			
+						
+		</div>
+
+		
+		
+		
+		<div id="optionsGame_RightColumn">
+		
+			<div id="optionsGame_RightColumn_AdsBlock" style="margin-left:11px;margin-top:11px;">
+<script async="" src="./Actividad3_files/f(2).txt"></script>
+<!-- BANNER JUEGOS LATERAL -->
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-4454931198923716" data-ad-slot="4146824840" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:300px;height:250px;" src="./Actividad3_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>				
+			</div>
+		
+			<div class="optionsGame_ColumnTitle">
+				<span>Ahora en juego:</span>
+			</div>
+			
+	
+			<div class="optionsgame_RightColumn_container">
+				
+				<a href="https://www.cerebriti.com/juegos-de-geografia/capitales-de-europa"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Capitales de Europa</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-ciencias/huesos-de-la-cabeza"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Huesos de la cabeza</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-ciencias/formulas-quimica-inorganica-1"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Formulación química inorgánica (I)</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-geografia/paises-y-capitales-de-africa-1"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Países y capitales de África (1)</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-geografia/paises-y-capitales-de-africa-2"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Países y capitales de África (2)</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-geografia/paises-y-capitales-de-america"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Países y capitales de América - Une</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-lengua/gentilicios-espanoles"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Gentilicios españoles</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-ciencias/instrumental-de-endodoncia"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Instrumental de Endodoncia</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-arte/monumentos-de-paris"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Monumentos de París</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-lengua/palabras-compuestas"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Palabras compuestas</div></a>
+					
+			</div>
+			
+	
+		
+			<div class="optionsGame_ColumnTitle">
+				<span>Top 10 Tecnología:</span>
+			</div>
+			
+			<div class="optionsgame_RightColumn_container">
+				
+				<a href="https://www.cerebriti.com/juegos-de-tecnologia/-ubicando-las-partes-de-la-computadora-para-peques"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Ubica las partes de la computadora (para peques)</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-tecnologia/componentes-de-una-placa-base--motherboard-"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Componentes de una placa base (Motherboard)</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-tecnologia/hardware-y-software"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Hardware y software</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-tecnologia/partes-de-una-motherboard"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Partes de una motherboard</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-tecnologia/dispositivos-de-entrada--salida-y-de-almacenamiento"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Dispositivos de entrada, salida y de almacenamiento</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-tecnologia/partes-internas-del-computador-"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Partes internas del computador</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-tecnologia/componentes-del-motherboard-"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Componentes del motherboard</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-tecnologia/-que-es-hardware-y-software-"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">¿Qué es hardware y software?</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-tecnologia/prueba-de-informatica"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Prueba de informática</div></a>
+				
+				<a href="https://www.cerebriti.com/juegos-de-tecnologia/hardware-o-software-i-"><div class="homeBodyContainerCol03_lineaAhoraEnJuego">Hardware o software (I)</div></a>
+		
+			</div>			
+		
+		</div>
+		<div class="clear_both_div"></div>
+		
+	</div>	
+
+	
+	
+<!-- </div>-->
+<!-- mainBody -->
+	
+	<div id="footer">
+		<div id="footer_neutra"></div>
+		<div id="footer_categorias">
+			<a href="https://www.cerebriti.com/" id="linkFooterLogo"></a>
+			<span id="footer_categorias_listado_titulo">Elige una categoría:</span>
+			<div id="footer_categorias_listado">
+				
+					<a href="https://www.cerebriti.com/juegos-de-ciencias/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Ciencias</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-matematicas/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Matemáticas</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-geografia/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Geografía</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-historia/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Historia</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-lengua/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Lengua</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-literatura/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Literatura</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-idiomas/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Idiomas</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-arte/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Arte</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-musica/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Música</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-cine/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Cine</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-television/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Televisión</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-tecnologia/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Tecnología</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-deportes/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Deportes</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-motor/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Motor</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-ocio/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Ocio</span>
+					</a>
+				
+					<a href="https://www.cerebriti.com/juegos-de-marcas/">
+						<span class="footer_categorias_listado_item"><span class="footer_categorias_listado_itemAzulico">&gt;&nbsp;Juegos de</span> Marcas</span>
+					</a>
+					
+			</div>
+			<div id="footer_categorias_texto">Estamos convencidos de que la mejor forma de aprender es jugando. Por eso nace Cerebriti. Un portal de juegos sobre cultura general creados por los propios usuarios.<br><br>
+Nuestra misión es concentrar todos los conocimientos de nuestra comunidad en un solo lugar para que tú puedas encontrar ese juego que buscas. Da igual lo específico o extraño que sea.<br><br>
+En Cerebriti además, podrás competir con tus amigos para demostrar quién es el que más sabe. Y todo ello mientras mantienes tus neuronas en forma.<br><br></div>
+			<div id="footer_redes">
+				<a href="https://www.facebook.com/Cerebriti" target="_blank"><img src="./Actividad3_files/footer_icon_fb2.png"></a>
+				<a href="http://www.twitter.com/cerebriti" target="_blank"><img src="./Actividad3_files/footer_icon_tw2.png"></a>
+				<!-- <a href="http://www.tuenti.com/ - m=Page&func=index&page_key=1_2582_72633913" target="_blank"><img src="https://www.cerebriti.com/img/footer_icon_tu2.png" /></a> -->
+				<a href="https://plus.google.com/u/1/b/118078632850448415900/118078632850448415900/posts" target="_blank"><img src="./Actividad3_files/footer_icon_gp2.png"></a>
+				<!-- <a href="" target="_blank"><img src="https://www.cerebriti.com/img/footer_icon_rss.png" /></a> -->			
+			</div>
+		</div>
+		<div id="footer_copyright">
+			<div id="footer_copy_derechos">© Cerebriti - Todos los derechos reservados.</div>
+			<div id="footer_copy_links">
+				<a target="_blank" href="http://landing.cerebriti.com/?utm_source=Cerebriti%20Web&amp;utm_medium=enlace&amp;utm_content=soy_profesor&amp;utm_campaign=Footer">Soy profesor</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<a href="https://www.cerebriti.com/informacion/faq/">Preguntas frecuentes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<span id="footerContactarLink">Contactar</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<span id="footerPublicidadLink">Publicidad</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+				<!-- <a href="https://www.cerebriti.com/informacion/terminos-y-condiciones/">T&eacute;rminos y condiciones</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; -->
+				<a href="https://www.cerebriti.com/informacion/aviso-legal/" rel="nofollow">Aviso Legal</a>
+			</div>
+		</div>
+	</div><!-- footer -->
+
+		</div><!-- container -->
+		
+      <div id="skyscrapperDerecho" style="margin-left:10px;margin-top:11px;">
+<script async="" src="./Actividad3_files/f(2).txt"></script>
+<!-- SKY JUEGOS DERECHA -->
+<ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-4454931198923716" data-ad-slot="2342788581" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent;"><iframe width="120" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:120px;height:600px;" src="./Actividad3_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        
+	  </div>
+	  
+    </div><iframe id="google_osd_static_frame_7217345410534" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Actividad3_files/saved_resource(3).html"></iframe>
+
+<script type="text/javascript">
+/*
+  var uvOptions = {};
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/QDUv604tOyjRsvx4RoKPQ.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();
+ */ 
+</script>
+
+
+	<ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 20001; top: 0px; left: 0px; display: none;"></ul><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 20001; top: 0px; left: 0px; display: none;"></ul></body><iframe id="google_shimpl" style="display: none;" src="./Actividad3_files/saved_resource(4).html"></iframe><iframe id="google_esf" name="google_esf" src="./Actividad3_files/zrt_lookup.html" data-ad-client="ca-pub-4454931198923716" style="display: none;"></iframe></html>
