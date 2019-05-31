@@ -1,0 +1,1231 @@
+var tCrono = null;
+var tCronoTime = 0;
+
+var g_gameType = -1;
+
+var g_game1definition = null;
+var g_game2definition = null;
+var g_game3definition = null;
+var g_game4definition = null;
+var g_game5definition = null;
+var g_game6definition = null;
+var g_game7definition = null;
+var g_game8definition = null;
+var g_game9definition = null;
+var g_game10definition = null;
+
+
+function stripVowelAccent(str)
+{
+ var rExps=[
+ {re:/[\xC0-\xC6]/g, ch:'A'},
+ {re:/[\xE0-\xE6]/g, ch:'a'},
+ {re:/[\xC8-\xCB]/g, ch:'E'},
+ {re:/[\xE8-\xEB]/g, ch:'e'},
+ {re:/[\xCC-\xCF]/g, ch:'I'},
+ {re:/[\xEC-\xEF]/g, ch:'i'},
+ {re:/[\xD2-\xD6]/g, ch:'O'},
+ {re:/[\xF2-\xF6]/g, ch:'o'},
+ {re:/[\xD9-\xDC]/g, ch:'U'},
+ {re:/[\xF9-\xFC]/g, ch:'u'},
+ {re:/[\xD1]/g, ch:'N'},
+ {re:/[\xF1]/g, ch:'n'} ];
+
+ for(var i=0, len=rExps.length; i<len; i++)
+  str=str.replace(rExps[i].re, rExps[i].ch);
+
+ return str;
+}
+
+function normalizar(str)
+{
+	return $.trim(stripVowelAccent(str).toLowerCase());
+}
+
+//-------------------------------------------------------------------
+function game1_checkResponse(response)
+{
+	if(response != "")
+	{
+		var ret = false;
+		
+		for(var i = 0; i < g_game1definition.nrespuestas; i++)
+		{
+			//console.log(response+'-->'+g_game1definition[i].respuesta);
+			if((normalizar(response) == normalizar(g_game1definition[i].respuesta)) && (!g_game1definition[i].acertada))
+			{
+				g_game1definition.nacertadas++;
+				g_game1definition[i].acertada = true;
+				
+				$('#'+g_game1definition[i].elemento).html(g_game1definition[i].respuesta);
+				
+				$('#marcadorInGameAcertadas').html(g_game1definition.nacertadas+'/'+g_game1definition.nrespuestas);
+				
+				if(g_game1definition.nacertadas == g_game1definition.nrespuestas)
+					game1_end();
+				
+				ret = true;
+			}
+		}
+		
+		return ret;
+	}
+	
+	return false;
+}
+
+//-------------------------------------------------------------------
+function game1_end()
+{
+	clearInterval(tCrono);
+	$('#txtInGameRespuesta').attr('readonly', 'readonly');
+	
+	$('#botonMeRindoBarraFooter').hide();
+	
+	var resultado = 1;
+	if(g_game1definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game1definition.nacertadas == g_game1definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game1definition.nacertadas);
+	
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=1&idjuego='+g_game1definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game1definition.nacertadas+'&tr='+g_game1definition.nrespuestas+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game1definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game1definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo1', '#gameArenaTipo1_solution');
+    	}
+    	else if(data.errorno == 1007)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo1', '#gameArenaTipo1_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+
+
+
+
+
+//-------------------------------------------------------------------
+function game2_checkResponse(response)
+{
+	if(response != "")
+	{
+		var ret = false;
+		
+		for(var i = 0; i < g_game2definition.nrespuestas; i++)
+		{
+			//console.log(response+'-->'+g_game2definition[i].respuesta);
+			if((normalizar(response) == normalizar(g_game2definition[i].respuesta)) && (!g_game2definition[i].acertada))
+			{
+				g_game2definition.nacertadas++;
+				g_game2definition[i].acertada = true;
+				
+				$('#'+g_game2definition[i].elemento).html(g_game2definition[i].respuesta);
+				
+				$('#marcadorInGameAcertadas').html(g_game2definition.nacertadas+'/'+g_game2definition.nrespuestas);
+				
+				if(g_game2definition.nacertadas == g_game2definition.nrespuestas)
+					game2_end();
+				
+				ret = true;
+			}
+		}
+		
+		return ret;
+	}
+	
+	return false;
+}
+
+//-------------------------------------------------------------------
+function game2_end()
+{
+	clearInterval(tCrono);
+	$('#txtInGameRespuesta').attr('readonly', 'readonly');	
+	
+	$('#botonMeRindoBarraFooter').hide();
+	
+	var resultado = 1;
+	if(g_game2definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game2definition.nacertadas == g_game2definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game2definition.nacertadas);
+	
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=2&idjuego='+g_game2definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game2definition.nacertadas+'&tr='+g_game2definition.nrespuestas+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game2definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game2definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo2', '#gameArenaTipo2_solution');
+    	}
+    	else if(data.errorno == 1007)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo2', '#gameArenaTipo2_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+
+//-------------------------------------------------------------------
+function game3_cleanPaired()
+{
+	g_game3definition.mobileSelectedItem = "vacio";
+}
+
+
+//-------------------------------------------------------------------
+function game3_updateCorrect()
+{
+	g_game3definition.nacertadas++;
+				
+	$('#marcadorInGameAcertadas').html(g_game3definition.nacertadas+'/'+g_game3definition.nrespuestas);
+				
+	if(g_game3definition.nacertadas == g_game3definition.nrespuestas)
+		game3_end();
+}
+
+//-------------------------------------------------------------------
+function game3_end()
+{
+	clearInterval(tCrono);
+	
+	$('#botonMeRindoBarraFooter').hide();
+	$('#containerMarcadorTopHelp3').hide();
+	
+	var resultado = 1;
+	if(g_game3definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game3definition.nacertadas == g_game3definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game3definition.nacertadas);
+	
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=3&idjuego='+g_game3definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game3definition.nacertadas+'&tr='+g_game3definition.nrespuestas+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game3definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game3definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo3', '#gameArenaTipo3_solution');
+    	}
+    	else if(data.errorno == 1007)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo3', '#gameArenaTipo3_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+
+
+
+//-------------------------------------------------------------------
+function game4_updateCorrect()
+{
+	g_game4definition.nacertadas++;
+				
+	$('#marcadorInGameAcertadas').html(g_game4definition.nacertadas+'/'+g_game4definition.nrespuestas);
+				
+	if(g_game4definition.nacertadas == g_game4definition.nrespuestas)
+		game4_end();
+}
+
+//-------------------------------------------------------------------
+function game4_end()
+{
+	clearInterval(tCrono);
+	
+	$('#botonMeRindoBarraFooter').hide();
+	$('#containerMarcadorTopHelp4').hide();
+	
+	var resultado = 1;
+	if(g_game4definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game4definition.nacertadas == g_game4definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game4definition.nacertadas);
+	
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=4&idjuego='+g_game4definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game4definition.nacertadas+'&tr='+g_game4definition.nrespuestas+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game4definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game4definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo3Fotos', '#gameArenaTipo3Fotos_solution');
+    	}
+    	else if(data.errorno == 1007)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo3Fotos', '#gameArenaTipo3Fotos_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+
+
+//-------------------------------------------------------------------
+function game5_updateCorrect()
+{
+	g_game5definition.nacertadas++;
+				
+	$('#marcadorInGameAcertadas').html(g_game5definition.nacertadas+'/'+g_game5definition.nrespuestas);
+				
+	if(g_game5definition.nacertadas == g_game5definition.nrespuestas)
+		game5_end();
+}
+
+//-------------------------------------------------------------------
+function game5_updateIncorrect()
+{
+	g_game5definition.nerrores++;
+				
+	$('#marcadorInGameErroneas').html(g_game5definition.nerrores+'/'+g_game5definition.nmaxerrores);
+				
+	if(g_game5definition.nerrores == g_game5definition.nmaxerrores)
+		game5_end();
+}
+
+//-------------------------------------------------------------------
+function game5_end()
+{
+	g_game5definition.bJuegoActivo = false;
+	
+	clearInterval(tCrono);
+	
+	$('#botonMeRindoBarraFooter').hide();
+	$('#containerMarcadorTopHelp5').hide();
+
+	var resultado = 1;
+	if(g_game5definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game5definition.nmaxerrores == g_game5definition.nerrores)
+		resultado = 1;
+	else if(g_game5definition.nacertadas == g_game5definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game5definition.nacertadas);	
+	
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=5&idjuego='+g_game5definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game5definition.nacertadas+'&tr='+g_game5definition.nrespuestas+
+          '&err='+g_game5definition.nerrores+'&te='+g_game5definition.nmaxerrores+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game5definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game5definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo4', '#gameArenaTipo4_solution');
+    	}
+    	else if(data.errorno == 1007)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo4', '#gameArenaTipo4_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+
+//-------------------------------------------------------------------
+function game6_updateCorrect()
+{
+	g_game6definition.nacertadas++;
+				
+	$('#marcadorInGameAcertadas').html(g_game6definition.nacertadas+'/'+g_game6definition.nrespuestas);
+				
+	if(g_game6definition.nacertadas == g_game6definition.nrespuestas)
+	{
+		game6_end();
+		return true;
+	}
+	else
+		return false;
+}
+
+//-------------------------------------------------------------------
+function game6_end()
+{
+	clearInterval(tCrono);
+	$('#txtInGameRespuesta').attr('readonly', 'readonly');
+	
+	$('#botonMeRindoBarraFooter').hide();
+	$('#containerMarcadorTopHelp3').hide();
+	
+	var resultado = 1;
+	if(g_game6definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game6definition.nacertadas == g_game6definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game6definition.nacertadas);
+	
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=6&idjuego='+g_game6definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game6definition.nacertadas+'&tr='+g_game6definition.nrespuestas+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game6definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game6definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo6', '#gameArenaTipo6_solution');
+    	}
+    	else if(data.errorno == 1007)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo6', '#gameArenaTipo6_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+
+//-------------------------------------------------------------------
+function game7_updateCorrect()
+{
+	g_game7definition.nacertadas++;
+				
+	$('#marcadorInGameAcertadas').html(g_game7definition.nacertadas+'/'+g_game7definition.nrespuestas);
+				
+	if(g_game7definition.nacertadas == g_game7definition.nrespuestas)
+	{
+		game7_end();
+		return true;
+	}
+	else
+		return false;
+}
+
+//-------------------------------------------------------------------
+function game7_end()
+{
+	clearInterval(tCrono);
+	$('#txtInGameRespuesta').attr('readonly', 'readonly');
+	
+	$('#botonMeRindoBarraFooter').hide();
+	$('#containerMarcadorTopHelp3').hide();
+	
+	var resultado = 1;
+	if(g_game7definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game7definition.nacertadas == g_game7definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game7definition.nacertadas);
+	
+	$.support.cors = true;
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=7&idjuego='+g_game7definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game7definition.nacertadas+'&tr='+g_game7definition.nrespuestas+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game7definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game7definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo7', '#gameArenaTipo7_solution');
+    	}
+    	else if(data.errorno == 1007)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo7', '#gameArenaTipo7_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+
+//-------------------------------------------------------------------
+function game8_checkResponse(response)
+{
+	if(response != "")
+	{
+		var ret = false;
+		
+		for(var i = 0; i < g_game8definition.nrespuestas; i++)
+		{
+			//console.log(response+'-->'+g_game1definition[i].respuesta);
+			if((normalizar(response) == normalizar(g_game8definition[i].respuesta)) && (!g_game8definition[i].acertada))
+			{
+				g_game8definition.nacertadas++;
+				g_game8definition[i].acertada = true;
+				
+				$('#'+g_game8definition[i].elemento).html(g_game8definition[i].respuesta);
+				$('#'+g_game8definition[i].elemento).parent().removeClass('gameArena8_elementHide');
+				$('#'+g_game8definition[i].elemento).parent().addClass('gameArena8_elementOpen');
+				
+				$('#marcadorInGameAcertadas').html(g_game8definition.nacertadas+'/'+g_game8definition.nrespuestas);
+				
+				if(g_game8definition.nacertadas == g_game8definition.nrespuestas)
+					game8_end();
+				
+				ret = true;
+			}
+		}
+		
+		return ret;
+	}
+	
+	return false;
+}
+
+//-------------------------------------------------------------------
+function game8_end()
+{
+	clearInterval(tCrono);
+	$('#txtInGameRespuesta').attr('readonly', 'readonly');
+	
+	$('#botonMeRindoBarraFooter').hide();
+	
+	var resultado = 1;
+	if(g_game8definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game8definition.nacertadas == g_game8definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game8definition.nacertadas);	
+	
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=8&idjuego='+g_game8definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game8definition.nacertadas+'&tr='+g_game8definition.nrespuestas+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game8definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game8definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo8', '#gameArenaTipo8_solution');
+    	}
+    	else if(data.errorno == 1007)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo8', '#gameArenaTipo8_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+
+//-------------------------------------------------------------------
+function game9_updateCorrect()
+{
+	g_game9definition.nacertadas++;
+				
+	$('#marcadorInGameAcertadas').html(g_game9definition.nacertadas+'/'+g_game9definition.nrespuestas);
+				
+	if(g_game9definition.nacertadas == g_game9definition.nrespuestas)
+		game9_end();
+}
+
+//-------------------------------------------------------------------
+function game9_end()
+{
+	clearInterval(tCrono);
+	$('#txtInGameRespuesta').attr('readonly', 'readonly');
+	
+	$('#botonMeRindoBarraFooter').hide();
+	$('#containerMarcadorTopHelp3').hide();
+	
+	var resultado = 1;
+	if(g_game9definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game9definition.nacertadas == g_game9definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game9definition.nacertadas);	
+	
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=9&idjuego='+g_game9definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game9definition.nacertadas+'&tr='+g_game9definition.nrespuestas+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game9definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game9definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo9', '#gameArenaTipo9_solution');
+    	}
+    	else if(data.errorno == 1007)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo9', '#gameArenaTipo9_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+//-------------------------------------------------------------------
+function game10_updateCorrect()
+{
+	g_game10definition.nacertadas++;
+				
+	$('#marcadorInGameAcertadas').html(g_game10definition.nacertadas+'/'+g_game10definition.nrespuestas);
+				
+	if(g_game10definition.nacertadas == g_game10definition.nrespuestas)
+		game10_end();
+}
+
+//-------------------------------------------------------------------
+function game10_end()
+{
+	clearInterval(tCrono);
+	$('#txtInGameRespuesta').attr('readonly', 'readonly');
+	
+	$('#botonMeRindoBarraFooter').hide();
+	$('#containerMarcadorTopHelp3').hide();
+	
+	var resultado = 1;
+	if(g_game10definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game10definition.nacertadas == g_game10definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game10definition.nacertadas);
+	
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=10&idjuego='+g_game10definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game10definition.nacertadas+'&tr='+g_game10definition.nrespuestas+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game10definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game10definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo10', '#gameArenaTipo10_solution');
+    	}
+    	else if(data.errorno == 1007) //not logged
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo10', '#gameArenaTipo10_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+//-------------------------------------------------------------------
+function game11_updateCorrect()
+{
+	g_game11definition.nacertadas++;
+				
+	$('#marcadorInGameAcertadas').html(g_game11definition.nacertadas+'/'+g_game11definition.nrespuestas);
+				
+	if(g_game11definition.nacertadas == g_game11definition.nrespuestas)
+		game11_end();
+}
+
+//-------------------------------------------------------------------
+function game11_end()
+{
+	clearInterval(tCrono);
+	
+	$('#botonMeRindoBarraFooter').hide();
+	$('#containerMarcadorTopHelp4').hide();
+	
+	var resultado = 1;
+	if(g_game11definition.bSeHaRendido)
+		resultado = 2;
+	else if(g_game11definition.nacertadas == g_game11definition.nrespuestas)
+		resultado = 3;
+	
+	retoFinalizadoCallback(g_game11definition.nacertadas);
+	
+	$.ajax({
+    url: g_gameURL+"ws_ajax.php",
+    data: 'wsf=103&tipojuego=4&idjuego='+g_game11definition.idjuego+'&resultado='+resultado+
+          '&resp='+g_game11definition.nacertadas+'&tr='+g_game11definition.nrespuestas+
+          '&rt='+tCronoTime+'&et='+parseInt(g_game11definition.tiempoSg-tCronoTime)+
+          '&retoid='+g_game11definition.idReto,
+    type: "POST",
+    async: true,
+    cache: false,
+    dataType: "json",
+    error: function(jqXHR, textStatus, errorThrown)
+    {
+    	// TODO: mostrar mensaje de Error      	
+    },
+    success: function(data, textStatus, jqXHR)
+    {
+    	if(data.errorno == 1000)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo11', '#gameArenaTipo11_solution');
+    	}
+    	else if(data.errorno == 1007)
+    	{
+    		showIngameResults(data.puntos, data.media, data.idpartida, '#gameArenaTipo11', '#gameArenaTipo11_solution');
+    	}
+    },
+    timeout: 15000
+	});	
+}
+
+
+//-------------------------------------------------------------------
+function showIngameResults(puntos, media, idpartida, arenaToHide, arenaToShow)
+{
+	$('#barraDeJuego').removeClass('barraDeJuegoTipo1');
+	$('#barraDeJuego').removeClass('barraDeJuegoTipo3');
+	$('#barraDeJuego').removeClass('barraDeJuegoTipo4');
+	$('#barraDeJuego').addClass('barraDeJuegoTipoResultado');
+	
+	$('#containerMarcadorInGameAcertadas').hide();
+	$('#containerMarcadorInGameErroneas').hide();
+	$('#txtInGameRespuesta').hide();
+	$('#containerMarcadorInGameTiempo').hide();
+	$('#labelInGameRespuesta').hide();
+	$('#containerMarcadorHelp').hide();
+	
+	$('#barraDeJuego_marcadorFinal_cifraPuntos').html(puntos);
+	$('#barraDeJuego_marcadorFinal_cifraMedia').html(media);
+	
+	$('#barraDeJuegoTipoResultado_containerInfo').show();
+	
+	$('#txtPartidaID').val(idpartida);
+	
+	g_retar_idPartida = idpartida;
+	if(!isMobile.any())
+		$('#botonRetarAmigoBarra').show();	
+	
+	$(arenaToHide).hide();
+	$(arenaToShow).show();
+	
+		var containerHeight = $(arenaToShow).height();
+		var medidas = Math.floor((containerHeight - 68) / 74);
+		var newHeight = medidas * 74;
+		if(newHeight < 370)
+			newHeight = 370;
+		$('#ingameRanking_containerInterno').height(newHeight);
+		
+		var totalHeight = newHeight;
+		console.log(totalHeight);
+		var disposableHeight = totalHeight - 74; // 74 para los bordes
+		console.log(disposableHeight);
+		var visibles = Math.floor(disposableHeight / 74);
+		console.log(visibles); 
+		for(var i = visibles + 1; i <= 8; i++)
+		{
+			$('.iR_lineaJuego0'+i).each(function(){
+				$(this).hide();
+			});
+		}	
+	
+	$('#ingameRanking').show();
+	$('#ingameRanking').animate({
+    left: '0px'
+  }, 2000);	
+}
+
+
+//-------------------------------------------------------------------
+function launchCrono(timeSg, endCallback)
+{
+	tCronoTime = timeSg;
+	tCrono = setInterval(function(){
+		tCronoTime--;
+		var minutes = parseInt(tCronoTime / 60);
+		if(minutes < 10)
+			minutes = "0"+minutes;
+		var seconds = parseInt(tCronoTime - minutes * 60);
+		if(seconds < 10)
+			seconds = "0"+seconds;
+		$('#marcadorInGameTiempo').html(minutes+":"+seconds);
+		if(tCronoTime == 0)
+		{
+			clearInterval(tCrono);
+			endCallback();
+		}
+	}, 1000);	
+}
+
+function clickButtonPersianaJuego()
+{
+	var toTop = 116;
+	if(isMobile.any())
+		toTop = parseInt($('div#tituloImagenJuego').height()) + parseInt($('div#header').height());
+	$("html,body").scrollTop(toTop);
+	
+	
+	//you should first check if ga is set
+	if (typeof ga !== 'undefined') {
+		ga('send', 'event', 'Botón Play', 'Jugar');
+	 }
+	//check if _gaq is set too
+	else if (typeof _gaq !== 'undefined') {
+		_gaq.push(['_trackEvent', 'Botón Play', 'Jugar']);
+	}	
+	
+	
+	$('.playingGameArena').each(function(){
+		$(this).css("visibility", "visible");
+	});
+	
+	$('#botonJugarPersianaJuego').hide();
+	$('#secrePersianaJuego').hide();
+	$('#bocadilloPersianaJuego').hide();
+	$('#logoPersianaJuego').hide();
+  $('#persianaJuego').animate({
+    height: '0%'
+  }, 3000, function() {
+  	
+		g_retar_idPartida = -1;	  	
+  	$('#botonRetarAmigoBarraFooter').hide();
+  	$('#botonMeRindoBarraFooter').show();
+  	
+  	$('div#mobile_containerMarcadoresIngame').show();
+  	if(isMobile.any() || isEmbeded)
+  		$('div#mobile_containerExplicacionIngame').hide();
+
+  	if(g_gameType == 1)
+  	{
+  		$('#txtInGameRespuesta').removeAttr('readonly');
+  		$('#txtInGameRespuesta').focus();
+  		launchCrono(g_game1definition.tiempoSg, game1_end);
+  	}
+  	else if(g_gameType == 2)
+  	{
+  		$('#txtInGameRespuesta').removeAttr('readonly');
+  		$('#txtInGameRespuesta').focus();
+  		launchCrono(g_game2definition.tiempoSg, game2_end);
+  	}	 
+  	else if(g_gameType == 3)
+  	{
+  		//$('#containerMarcadorTopHelp3').animate({ color: "#FFF" }, 5000);
+  		launchCrono(g_game3definition.tiempoSg, game3_end);
+  	}	 
+  	else if(g_gameType == 4)
+  	{
+  		//$('#containerMarcadorTopHelp4').animate({ color: "#FFF" }, 5000);
+  		launchCrono(g_game4definition.tiempoSg, game4_end);
+  	}	 	  	
+  	else if(g_gameType == 5)
+  	{
+  		//$('#containerMarcadorTopHelp5').animate({ color: "#FFF" }, 5000);
+  		$('#txtInGameRespuesta').removeAttr('readonly');
+  		launchCrono(g_game5definition.tiempoSg, game5_end);
+  		g_game5definition.bJuegoActivo = true;
+  	}
+  	else if(g_gameType == 6)
+  	{
+  		//$('#containerMarcadorTopHelp3').animate({ color: "#FFF" }, 5000);
+  		launchCrono(g_game6definition.tiempoSg, game6_end);
+  	}	  	
+  	else if(g_gameType == 7)
+  	{
+  		//$('#containerMarcadorTopHelp3').animate({ color: "#FFF" }, 5000);
+  		launchCrono(g_game7definition.tiempoSg, game7_end);
+  	}	  	
+  	else if(g_gameType == 8)
+  	{
+  		$('#txtInGameRespuesta').removeAttr('readonly');
+  		$('#txtInGameRespuesta').focus();
+  		launchCrono(g_game8definition.tiempoSg, game8_end);
+  	}
+  	else if(g_gameType == 9)
+  	{
+  		//$('#containerMarcadorTopHelp3').animate({ color: "#FFF" }, 5000);
+  		launchCrono(g_game9definition.tiempoSg, game9_end);
+  	}	  	
+  	else if(g_gameType == 10)
+  	{
+  		//$('#containerMarcadorTopHelp3').animate({ color: "#FFF" }, 5000);
+  		launchCrono(g_game10definition.tiempoSg, game10_end);
+  	}	 
+  	else if(g_gameType == 11)
+  	{
+  		//$('#containerMarcadorTopHelp3').animate({ color: "#FFF" }, 5000);
+  		launchCrono(g_game11definition.tiempoSg, game11_end);
+  	}	  	
+  	
+  });			
+}
+
+$(function() {
+	
+	//-----------------------------------------------------------------	
+	$('#botonJugarPersianaJuego').click(function(){
+		clickButtonPersianaJuego();
+	});
+	
+	//-----------------------------------------------------------------	
+	$('#botonJugarPersianaJuego').bind("touchstart", function(){
+		clickButtonPersianaJuego();
+	});
+	
+	//-----------------------------------------------------------------	
+	$('#txtInGameRespuesta').bind('input', function() { 
+	/*$('#txtInGameRespuesta').keypress(function(e){*/
+  	var acertado = false;
+    if(g_gameType == 1)
+    {
+    	if(game1_checkResponse($('#txtInGameRespuesta').val()/* + String.fromCharCode(e.charCode)*/))
+    		acertado = true;
+    	else if(game1_checkResponse($('#txtInGameRespuesta').val()))
+    		acertado = true;
+    }
+    else if(g_gameType == 2)
+    {
+    	if(game2_checkResponse($('#txtInGameRespuesta').val()/* + String.fromCharCode(e.charCode)*/))
+    		acertado = true;
+    	else if(game2_checkResponse($('#txtInGameRespuesta').val()))
+    		acertado = true;
+    }
+    else if(g_gameType == 8)
+    {
+    	if(game8_checkResponse($('#txtInGameRespuesta').val()/* + String.fromCharCode(e.charCode)*/))
+    		acertado = true;
+    	else if(game8_checkResponse($('#txtInGameRespuesta').val()))
+    		acertado = true;
+    }
+    
+    if(acertado)
+    {
+  		//e.preventDefault();
+  		$('#txtInGameRespuesta').val("");
+    }
+	});
+	
+	$('#txtInGameRespuesta').bind('propertychange', function() { 
+	/*$('#txtInGameRespuesta').keypress(function(e){*/
+  	var acertado = false;
+    if(g_gameType == 1)
+    {
+    	if(game1_checkResponse($('#txtInGameRespuesta').val()/* + String.fromCharCode(e.charCode)*/))
+    		acertado = true;
+    	else if(game1_checkResponse($('#txtInGameRespuesta').val()))
+    		acertado = true;
+    }
+    else if(g_gameType == 2)
+    {
+    	if(game2_checkResponse($('#txtInGameRespuesta').val()/* + String.fromCharCode(e.charCode)*/))
+    		acertado = true;
+    	else if(game2_checkResponse($('#txtInGameRespuesta').val()))
+    		acertado = true;
+    }
+    else if(g_gameType == 8)
+    {
+    	if(game8_checkResponse($('#txtInGameRespuesta').val()/* + String.fromCharCode(e.charCode)*/))
+    		acertado = true;
+    	else if(game8_checkResponse($('#txtInGameRespuesta').val()))
+    		acertado = true;
+    }    
+    
+    if(acertado)
+    {
+  		//e.preventDefault();
+  		$('#txtInGameRespuesta').val("");
+    }
+	});
+
+	//-----------------------------------------------------------------	
+	$('#botonMeRindoBarraFooter').click(function(){
+		if(g_gameType == 1)
+		{
+			g_game1definition.bSeHaRendido = true;
+			game1_end();
+		}
+		else if(g_gameType == 2)
+		{
+			g_game2definition.bSeHaRendido = true;
+			game2_end();
+		}
+		else if(g_gameType == 3)
+		{
+			g_game3definition.bSeHaRendido = true;
+			game3_end();
+		}
+		else if(g_gameType == 4)
+		{
+			g_game4definition.bSeHaRendido = true;
+			game4_end();
+		}
+		else if(g_gameType == 5)
+		{
+			g_game5definition.bSeHaRendido = true;
+			game5_end();
+		}
+		else if(g_gameType == 6)
+		{
+			g_game6definition.bSeHaRendido = true;
+			game6_end();
+		}
+		else if(g_gameType == 7)
+		{
+			g_game7definition.bSeHaRendido = true;
+			game7_end();
+		}
+		else if(g_gameType == 8)
+		{
+			g_game8definition.bSeHaRendido = true;
+			game8_end();
+		}
+		else if(g_gameType == 9)
+		{
+			g_game9definition.bSeHaRendido = true;
+			game9_end();
+		}		
+		else if(g_gameType == 10)
+		{
+			g_game10definition.bSeHaRendido = true;
+			game10_end();
+		}	
+		else if(g_gameType == 11)
+		{
+			g_game11definition.bSeHaRendido = true;
+			game11_end();
+		}				
+	});
+	
+	//-----------------------------------------------------------------
+	$('#ingameRanking_closeTab').click(function(){
+		var distancia = $('div#ingameRanking_container').width();
+		$('#ingameRanking').animate({
+			left: '-'+distancia+'px'
+			  }, 2000, function(){
+			  	$('#ingameRanking_closeTab').hide();
+			  	$('#ingameRanking_openTab').show();
+			  });
+		
+		/*$('#ingameRanking_container').hide();
+  	$('#ingameRanking_closeTab').hide();
+  	$('#ingameRanking_openTab').show();*/
+		
+	});
+
+	//-----------------------------------------------------------------
+	$('#ingameRanking_openTab').click(function(){
+		$('#ingameRanking').animate({
+	    left: '0px'
+	  }, 2000, function(){
+	  	$('#ingameRanking_closeTab').show();
+	  	$('#ingameRanking_openTab').hide();
+	  });				
+	});
+	
+	//-----------------------------------------------------------------
+	$('#ingameRanking_containerRegistro_openTab').click(function(){
+		$('#ingameRanking').animate({
+	    left: '0px'
+	  }, 2000, function(){
+	  	$('#ingameRanking_containerRegistro_closeTab').show();
+	  	$('#ingameRanking_containerRegistro_openTab').hide();
+	  });				
+	});	
+
+	//-----------------------------------------------------------------	
+	$('#ingameRanking_containerRegistro_closeTab').click(function(){
+		var distancia = $('div#ingameRanking_container').width();
+		$('#ingameRanking').animate({
+			left: '-'+distancia+'px'
+	  }, 2000, function(){
+	  	$('#ingameRanking_containerRegistro_closeTab').hide();
+	  	$('#ingameRanking_containerRegistro_openTab').show();
+	  });
+		
+	});
+	
+	//-----------------------------------------------------------------
+	$("#botonMeGustaBarraFooter").click(function() {
+		$.ajax({
+      url: g_gameURL+"ws_ajax.php",
+      data: 'wsf=100&gid='+g_GameID,
+      type: "POST",
+      async: true,
+      cache: false,
+      dataType: "json",
+      error: function(jqXHR, textStatus, errorThrown)
+      {
+      	// TODO: mostrar mensaje de Error      	
+      },
+      success: function(data, textStatus, jqXHR)
+      {
+      	if(data.errorno == 1000)
+      	{
+      		$('#infoFooterPersonasGustaJuego').html(String.format(LOC.text24, FormatPrettyNumber(data.nmegustan)));
+      	}
+      	else if(data.errorno == 1007)
+      	{
+      		lanzarDialogoError(LOC.text25);
+      	}
+      },
+      timeout: 15000
+		});
+	});
+	
+	$('#ingameRanking_containerLogin_containerIniciar').click(function(){
+		$('#ingameRanking_formLogin').submit();
+	});
+	
+	$('#ingameRanking_containerRegistro_botonEmail').click(function(){
+		window.location = g_gameURL+LOC.URL_USUARIO+'/'+LOC.URL_USR_REGISTRO+'/';
+		/*window.location = g_gameURL+'usuario/registro/partida/'+$('#txtPartidaID').val()+'/';*/
+	});
+	
+	$('#ingameRanking_containerRegistro_botonFB').click(function(){
+			window.location = g_gameURL+LOC.URL_USUARIO+"/"+LOC.URL_USR_REGISTROFB+"/";
+		});
+	
+	
+	
+	$('#ingameRanking_containerLoginSecre_containerIniciar').click(function(){
+		$('#ingameRanking_formLoginSecre').submit();
+	});
+	
+	$('#ingameRanking_containerRegistroSecre_botonEmail').click(function(){
+		window.location = g_gameURL+LOC.URL_USUARIO+'/'+LOC.URL_USR_REGISTRO+'/';
+		/*window.location = g_gameURL+'usuario/'+URL_USR_REGISTRO+'/partida/'+$('#txtPartidaID').val()+'/';*/
+	});
+	
+	$('#ingameRanking_containerRegistroSecre_botonFB').click(function(){
+			window.location = g_gameURL+LOC.URL_USUARIO+"/"+LOC.URL_USR_REGISTROFB+"/";
+		});	
+	
+	
+	
+	//-----------------------------------------------------------------	
+	$('#botonEnviarAmigo').click(function() {
+		var paramsList = '&txtEnviaAmigo_miNombre='+$('#txtEnviaAmigo_miNombre').val();
+		paramsList += '&txtEnviaAmigo_miEmail='+$('#txtEnviaAmigo_miEmail').val();
+		paramsList += '&txtEnviaAmigo_amigoNombre='+$('#txtEnviaAmigo_amigoNombre').val();
+		paramsList += '&txtEnviaAmigo_amigoEmail='+$('#txtEnviaAmigo_amigoEmail').val();
+		
+		$.ajax({
+      url: g_gameURL+"ws_ajax.php",
+      data: 'wsf=101&gid='+g_GameID+paramsList,
+      type: "POST",
+      async: true,
+      cache: false,
+      dataType: "json",
+      error: function(jqXHR, textStatus, errorThrown)
+      {
+      	// TODO: mostrar mensaje de Error      	
+      },
+      success: function(data, textStatus, jqXHR)
+      {
+      	$('#txtEnviaAmigo_miNombre').val("");
+      	$('#txtEnviaAmigo_miEmail').val("");
+      	$('#txtEnviaAmigo_amigoNombre').val("");
+      	$('#txtEnviaAmigo_amigoEmail').val("");
+      	
+      	lanzarDialogoFeedback(LOC.text26, false);
+      },
+      timeout: 15000
+		});
+	});
+});

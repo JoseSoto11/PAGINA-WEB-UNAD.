@@ -1,0 +1,132 @@
+$(function() {
+
+	$('#txtTextoBusquedaBarraHerramientas').bind('input', function() {
+		var texto = $('#txtTextoBusquedaBarraHerramientas').val();
+		if(texto.length >= 3)
+			buscar_predictivo(texto);
+		else
+			$('#header_desplegableBusquedas').hide();
+	});
+	
+	function buscar_predictivo(cadena)
+	{
+		$.ajax({
+	    url: g_gameURL+"ws_busqueda.php",
+	    data: 'srch='+cadena,
+	    type: "POST",
+	    async: true,
+	    cache: false,
+	    dataType: "json",
+	    error: function(jqXHR, textStatus, errorThrown)
+	    {
+	    	// TODO: mostrar mensaje de Error      	
+	    },
+	    success: function(data, textStatus, jqXHR)
+	    {
+	    	
+		    var juegosVisible = false;
+		    	$('#header_desplegableBusquedas_juegos').hide();
+		    	$('#header_desplegableBusquedas_cuerpoJuegos').html("");
+		    var etiquetasVisible = false;
+		    	$('#header_desplegableBusquedas_etiquetas').hide();
+		    	$('#header_desplegableBusquedas_cuerpoEtiquetas').html("");
+		    var usuariosVisible = false;
+		    	$('#header_desplegableBusquedas_usuarios').hide();
+	    		$('#header_desplegableBusquedas_cuerpoUsuarios').html("");
+		    var canalesVisible = false;
+	    	$('#header_desplegableBusquedas_canales').hide();
+    		$('#header_desplegableBusquedas_cuerpoCanales').html("");		    
+
+		    var lineas = 1;
+		    
+	    	$.each(data.listado, function(key, val){
+	    		
+		    	if(val.tipo == 1) // juegos ------------------------------
+		    	{
+			    	if(!juegosVisible)
+			    	{
+				    	$('#header_desplegableBusquedas_juegos').show();
+				    	juegosVisible = true;
+			    	}
+
+			    	$('#header_desplegableBusquedas_cuerpoJuegos').append('<div class="header_desplegableBusquedas_cuerpoBloque">\
+				    																												 <a href="'+val.link+'">\
+						    																											<div class="h_dB_cuerpoBloque_zonaLink" data-myinfo="desplegableBusquedas_linea'+lineas+'"></div>\
+						    																										 </a>\
+						    																										 <div id="desplegableBusquedas_linea'+lineas+'" class="h_dB_cuerpoBloque_zonaInfo">\
+						    																											<img src="'+val.imgurl+'" />\
+						    																											<div class="h_dB_cuerpoBloque_zonaInfo_texto">'+val.texto+'</div>\
+						    																										 </div>\
+						    																										</div>');
+		    	}
+		    	else if(val.tipo == 2) // etiquetas ----------------------
+		    	{
+			    	if(!etiquetasVisible)
+			    	{
+				    	$('#header_desplegableBusquedas_etiquetas').show();
+				    	etiquetasVisible = true;
+			    	}
+			    	
+			    	$('#header_desplegableBusquedas_cuerpoEtiquetas').append('<div class="header_desplegableBusquedas_cuerpoBloque">\
+			    																														<a href="'+val.link+'">\
+			    																															<div class="h_dB_cuerpoBloque_zonaLink" data-myinfo="desplegableBusquedas_linea'+lineas+'"></div>\
+			    																														</a>\
+																																			<div id="desplegableBusquedas_linea'+lineas+'" class="h_dB_cuerpoBloque_zonaInfo">\
+																																				<div class="h_dB_cuerpoBloque_zonaInfo_textoLargo"># '+val.texto+'</div>\
+																																			</div>\
+																																		  </div>');
+		    	}
+		    	else if(val.tipo == 3) // usuarios -----------------------
+		    	{
+			    	if(!usuariosVisible)
+			    	{
+				    	$('#header_desplegableBusquedas_usuarios').show();
+				    	usuariosVisible = true;
+			    	}
+
+			    	$('#header_desplegableBusquedas_cuerpoUsuarios').append('<div class="header_desplegableBusquedas_cuerpoBloque">\
+			    																													 <a href="'+val.link+'">\
+						    																											<div class="h_dB_cuerpoBloque_zonaLink" data-myinfo="desplegableBusquedas_linea'+lineas+'"></div>\
+						    																										 </a>\
+						    																										 <div id="desplegableBusquedas_linea'+lineas+'" class="h_dB_cuerpoBloque_zonaInfo">\
+						    																											<img src="'+val.imgurl+'" />\
+						    																											<div class="h_dB_cuerpoBloque_zonaInfo_texto">'+val.texto+'</div>\
+						    																										 </div>\
+						    																											</div>');
+		    	}
+		    	else if(val.tipo == 4) // canales -----------------------
+		    	{
+			    	if(!canalesVisible)
+			    	{
+				    	$('#header_desplegableBusquedas_canales').show();
+				    	canalesVisible = true;
+			    	}
+
+			    	$('#header_desplegableBusquedas_cuerpoCanales').append('<div class="header_desplegableBusquedas_cuerpoBloque">\
+			    																													<a href="'+val.link+'">\
+						    																											<div class="h_dB_cuerpoBloque_zonaLink" data-myinfo="desplegableBusquedas_linea'+lineas+'"></div>\
+						    																										 </a>\
+						    																										 <div id="desplegableBusquedas_linea'+lineas+'" class="h_dB_cuerpoBloque_zonaInfo">\
+						    																											<img src="'+val.imgurl+'" />\
+						    																											<div class="h_dB_cuerpoBloque_zonaInfo_texto">'+val.texto+'</div>\
+						    																										</div>\
+						    																										</div>');
+		    	}		    	
+		    	
+		    	lineas = lineas + 1;
+	    	});
+	    	
+	    	if(data.mostrarMasJuegos == 1)
+	    		$("a#verTodosJuegosHRef").attr("href", g_gameURL+"buscar/"+data.busqueda);
+	    	
+	    	$('#header_desplegableBusquedas').show();
+	    	setTimeout(function(){
+	    		$('#header_desplegableBusquedas').hide();
+	    	}, 15000);
+	    },
+	    timeout: 3000
+		});				
+
+	}
+	
+});

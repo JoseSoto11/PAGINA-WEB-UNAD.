@@ -1,0 +1,73 @@
+(function(){
+  var tag = document.getElementById('cfy-script'),
+      slug = tag.getAttribute('data-account-slug'),
+      id = tag.getAttribute('data-account-id');
+
+  var cfyDiv = document.createElement('div');
+  cfyDiv.id = 'communify-widget-id';
+  cfyDiv.setAttribute('data-account-slug', slug);
+  cfyDiv.setAttribute('data-account-id', id);
+
+  var innerDiv = document.createElement('div');
+  innerDiv.className ='communify-widget';
+  innerDiv.setAttribute('ui-view', '');
+  cfyDiv.appendChild(innerDiv);
+
+  var includeScript = function()
+  {
+    var d = document,
+        cfyScript = d.createElement('script');
+
+    cfyScript.type = 'text/javascript';
+    cfyScript.src = 'https://yourcommunify.com/views/widget/parent/widget-parent.min.js';
+    cfyScript.async = true;
+
+    var head = d.getElementsByTagName('head')[0];
+    if(head) {
+      head.appendChild(cfyScript)
+    }
+  };
+
+  var checkIsInBody = function(elem)
+  {
+    if(elem.parentElement.tagName.toUpperCase() != 'BODY' && elem.parentElement.tagName.toUpperCase() != 'HEAD')
+    {
+      checkIsInBody(elem.parentElement);
+    } else {
+      if(elem.parentElement.tagName == 'HEAD') {
+        console.warn('Please Platform script has been included inside head tag');
+        setCfyScript(true);
+      } else {
+        setCfyScript();
+      }
+    }
+  };
+
+  var appendItemToBody = function()
+  {
+    var _timeout = setTimeout(function()
+    {
+      var b = document.getElementsByTagName('body');
+      if(b.length > 0) {
+        b[0].appendChild(cfyDiv);
+        includeScript();
+      } else {
+        clearTimeout(_timeout);
+        appendItemToBody();
+      }
+    }, 50);
+  };
+
+  var setCfyScript = function(param)
+  {
+    if(param){
+      appendItemToBody();
+    } else {
+      tagScript.parentElement.insertBefore(cfyDiv, tagScript);
+      includeScript();
+    }
+  };
+
+  var tagScript = document.getElementById('cfy-script');
+  checkIsInBody(tagScript);
+})();

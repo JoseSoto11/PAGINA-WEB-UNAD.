@@ -1,0 +1,129 @@
+//-------------------------------------------------------------------
+function FormatPrettyNumber(n)
+{
+	var digitsThousands = Math.floor(parseInt(n) / 1000);
+	if(digitsThousands > 0)
+		return digitsThousands + '.' + (n - (digitsThousands * 1000));
+	else
+		return n;
+}
+
+//-------------------------------------------------------------------
+function ajaxFileUpload(elementID, uploadedImageElementID, txtNameUploadedImage)
+{
+	$.support.cors = true;
+	
+	$.ajaxFileUpload
+	(
+		{
+			url:g_gameURL+'doajaxfileupload.php',
+			/*url:'http://'+window.location.host+'/'+'doajaxfileupload.php',*/
+			secureuri:false,
+			fileElementId:elementID,
+			dataType: 'json',
+			data:{imageid:elementID},
+			success: function (data, status)
+			{
+				if(typeof(data.error) != 'undefined')
+				{
+					if(data.error != '')
+					{
+						alert(data.error);
+					}
+					else
+					{
+						//alert(data.msg);
+						$('#'+uploadedImageElementID).attr("src",data.imglink);
+						$('#'+txtNameUploadedImage).val(data.img);
+						$('#txtImagenFacebookElegida').val("");
+					}
+				}
+			},
+			error: function (data, status, e)
+			{
+				alert(e);
+			}
+		}
+	);
+	return false;
+}
+
+//-------------------------------------------------------------------
+function ajaxFileUploadCB(elementID, fCB)
+{
+	$.support.cors = true;
+	
+	$.ajaxFileUpload
+	(
+		{
+			url:g_gameURL+'doajaxfileupload.php',
+			/*url:'http://'+window.location.host+'/'+'doajaxfileupload.php',*/
+			secureuri:false,
+			fileElementId:elementID,
+			dataType: 'json',
+			data:{imageid:elementID},
+			success: function (data, status)
+			{
+				if(typeof(data.error) != 'undefined')
+				{
+					if(data.error != '')
+					{
+						alert(data.error);
+					}
+					else
+					{
+						fCB(data.imglink, data.img);
+						//alert(data.msg);
+						/*$('#'+uploadedImageElementID).attr("src",data.imglink);
+						$('#'+txtNameUploadedImage).val(data.img);
+						$('#txtImagenFacebookElegida').val("");*/
+					}
+				}
+			},
+			error: function (data, status, e)
+			{
+				alert(e);
+			}
+		}
+	);
+	return false;
+}
+
+//El 'el' debe llevar el # delante si es un id
+function PauseCSS3animation(el)
+{
+	$(el).css('animation-play-state', 'paused');
+	$(el).css('-webkit-animation-play-state', 'paused');
+	$(el).css('-moz-animation-play-state', 'paused');
+	$(el).css('-ms-animation-play-state', 'paused');
+	$(el).css('-o-animation-play-state', 'paused');
+}
+
+//El 'el' debe llevar el # delante si es un id
+function RunCSS3animation(el)
+{
+	$(el).css('animation-play-state', 'running');
+	$(el).css('-webkit-animation-play-state', 'running');
+	$(el).css('-moz-animation-play-state', 'running');
+	$(el).css('-ms-animation-play-state', 'running');
+	$(el).css('-o-animation-play-state', 'running');
+}
+
+//El 'el' debe llevar el # delante si es un id
+function SetDurationCSS3animation(el, sec)
+{
+	$(el).css('animation-duration', sec+'s');
+	$(el).css('-webkit-animation-duration', sec+'s');
+	$(el).css('-moz-animation-duration', sec+'s');
+	$(el).css('-ms-animation-duration', sec+'s');
+	$(el).css('-o-animation-duration', sec+'s');		
+}
+
+//El 'el' debe llevar el # delante si es un id
+function SetCSS3animation(el, an)
+{
+	$(el).css('animation', an);
+	$(el).css('-webkit-animation', an);
+	$(el).css('-moz-animation', an);
+	$(el).css('-ms-animation', an);
+}

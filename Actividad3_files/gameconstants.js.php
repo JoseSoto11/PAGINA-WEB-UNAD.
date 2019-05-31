@@ -1,0 +1,1 @@
+var g_gameURL='https://www.cerebriti.com/';var g_staticImagesPath='https://www.cerebriti.com/img/';var g_uploadImagesPath='https://www.cerebriti.com/uploads/';var g_friendlyUrlBegin='/';
